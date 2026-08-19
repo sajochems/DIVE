@@ -1,0 +1,65 @@
+[gd_scene format=3 uid="uid://cv75eh5wjud5c"]
+
+[ext_resource type="Script" uid="uid://sourdoo17lin" path="res://scripts/ui/reconstruction_menu.gd" id="1_tdk5n"]
+[ext_resource type="Theme" uid="uid://bpax0y6qshynb" path="res://assets/themes/menu_ui.tres" id="2_2biu2"]
+
+[node name="ReconstructionMenu" type="Control" unique_id=130848336]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_tdk5n")
+
+[node name="Panel" type="Panel" parent="." unique_id=1846659390]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_2biu2")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel" unique_id=1317267893]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -350.0
+offset_top = -323.0
+offset_right = 350.0
+offset_bottom = 322.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="StartButton" type="Button" parent="Panel/VBoxContainer" unique_id=74834982]
+layout_mode = 2
+text = "Start Reconstrucion
+"
+
+[node name="HSeparator" type="HSeparator" parent="Panel/VBoxContainer" unique_id=832205974]
+layout_mode = 2
+
+[node name="FileBox" type="HBoxContainer" parent="Panel/VBoxContainer" unique_id=1864322957]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/FileBox" unique_id=891282257]
+layout_mode = 2
+text = "File Location "
+
+[node name="FileLocationBox" type="LineEdit" parent="Panel/VBoxContainer/FileBox" unique_id=1694159907]
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "Enter file to retrieve"
+
+[node name="HSeparator2" type="HSeparator" parent="Panel/VBoxContainer" unique_id=1416209195]
+layout_mode = 2
+
+[node name="BackButton" type="Button" parent="Panel/VBoxContainer" unique_id=1296351541]
+layout_mode = 2
+text = "Back"

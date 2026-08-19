@@ -1,0 +1,37 @@
+[gd_scene load_steps=11 format=3 uid="uid://cmdygm7fls3k3"]
+
+[ext_resource type="Script" uid="uid://3j4gt7i8rqvq" path="res://addons/zylann.hterrain/hterrain.gd" id="1_mxhtf"]
+[ext_resource type="Resource" uid="uid://b38w387aqsq50" path="res://assets/Terrain/data.hterrain" id="2_syc7y"]
+[ext_resource type="Script" uid="uid://wgle3du3shdk" path="res://addons/zylann.hterrain/hterrain_texture_set.gd" id="3_blr7x"]
+[ext_resource type="Texture2D" uid="uid://lgebfwhi65as" path="res://assets/Textures/Grass002_4K-JPG/Grass002_4K_Color.jpg" id="4_2ixpn"]
+[ext_resource type="Texture2D" uid="uid://vpvuriynr6wd" path="res://assets/Textures/aerial_rocks_04/aerial_rocks_04_diff_4k.jpg" id="5_61yso"]
+[ext_resource type="Texture2D" uid="uid://di6osxbsvgmyg" path="res://assets/Textures/grass_path_2/grass_path_2_diff_4k.jpg" id="6_p5l2j"]
+[ext_resource type="Texture2D" uid="uid://cr2x6saqinnkm" path="res://assets/Textures/Grass002_4K-JPG/Grass002_4K_NormalGL.jpg" id="7_qs5vx"]
+[ext_resource type="Texture2D" uid="uid://b7ssaayoypolg" path="res://assets/Textures/aerial_rocks_04/aerial_rocks_04_nor_gl_4k.jpg" id="8_e3p40"]
+[ext_resource type="Texture2D" uid="uid://c0kr22uc7itkg" path="res://assets/Textures/grass_path_2/grass_path_2_nor_gl_4k.jpg" id="9_3p0c8"]
+
+[sub_resource type="Resource" id="Resource_3vcqs"]
+script = ExtResource("3_blr7x")
+mode = 0
+textures = [[ExtResource("4_2ixpn"), ExtResource("5_61yso"), ExtResource("6_p5l2j")], [ExtResource("7_qs5vx"), ExtResource("8_e3p40"), ExtResource("9_3p0c8")]]
+
+[node name="HTerrain" type="Node3D"]
+script = ExtResource("1_mxhtf")
+map_scale = Vector3(1, 1, 0.5)
+centered = true
+_terrain_data = ExtResource("2_syc7y")
+chunk_size = 32
+collision_enabled = true
+collision_layer = 1
+collision_mask = 1
+shader_type = "Classic4Lite"
+custom_shader = null
+custom_globalmap_shader = null
+texture_set = SubResource("Resource_3vcqs")
+render_layers = 1
+cast_shadow = 1
+shader_params/u_ground_uv_scale = 20
+shader_params/u_depth_blending = true
+shader_params/u_triplanar = null
+shader_params/u_tile_reduction = null
+metadata/_custom_type_script = "uid://3j4gt7i8rqvq"

@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://dlsyh4el6sl3w"]
+
+[ext_resource type="Script" uid="uid://bwuqdb6oqig10" path="res://scripts/objects/plank.gd" id="1_cxi8c"]
+[ext_resource type="Material" uid="uid://tfhkgq03icpj" path="res://assets/Textures/Materials/Weathered_planks.tres" id="1_t6gv0"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_o38xi"]
+material = ExtResource("1_t6gv0")
+size = Vector3(1, 0.1, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_t6gv0"]
+size = Vector3(1, 0.1, 1)
+
+[node name="CityPlank" type="Node3D"]
+script = ExtResource("1_cxi8c")
+HEIGHTOFFSET = 0.55
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_o38xi")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
+shape = SubResource("BoxShape3D_t6gv0")

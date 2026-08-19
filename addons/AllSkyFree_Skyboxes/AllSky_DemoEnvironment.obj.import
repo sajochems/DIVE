@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cct0wkdfcaeko"
+path="res://.godot/imported/AllSky_DemoEnvironment.obj-160fc64d1aff48afc218bc8905cd64d8.mesh"
+
+[deps]
+
+files=["res://.godot/imported/AllSky_DemoEnvironment.obj-160fc64d1aff48afc218bc8905cd64d8.mesh"]
+
+source_file="res://addons/AllSkyFree_Skyboxes/AllSky_DemoEnvironment.obj"
+dest_files=["res://.godot/imported/AllSky_DemoEnvironment.obj-160fc64d1aff48afc218bc8905cd64d8.mesh", "res://.godot/imported/AllSky_DemoEnvironment.obj-160fc64d1aff48afc218bc8905cd64d8.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

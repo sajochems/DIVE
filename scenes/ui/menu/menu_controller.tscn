@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://c5jdaab8d0i7j"]
+
+[ext_resource type="Script" uid="uid://cmqlr1a8exsc7" path="res://scripts/ui/menu_manager.gd" id="1_snpgo"]
+[ext_resource type="PackedScene" uid="uid://clujaf3u776a3" path="res://addons/godot-xr-tools/objects/viewport_2d_in_3d.tscn" id="2_ds7x2"]
+[ext_resource type="PackedScene" uid="uid://bn0vuqo17rlxc" path="res://scenes/ui/menu/main_menu.tscn" id="3_pqo72"]
+[ext_resource type="PackedScene" uid="uid://dgdb1texynduw" path="res://addons/godot-xr-tools/objects/virtual_keyboard.tscn" id="4_3xm3d"]
+
+[node name="Menu" type="Node3D" unique_id=998523844]
+script = ExtResource("1_snpgo")
+
+[node name="Viewport2Din3D" parent="." unique_id=1799797175 instance=ExtResource("2_ds7x2")]
+transform = Transform3D(0.003, 0, 0, 0, 0.003, 0, 0, 0, 0.003, 0, 0, -1.6)
+screen_size = Vector2(1280, 720)
+collision_layer = 5242880
+scene = ExtResource("3_pqo72")
+viewport_size = Vector2(1280, 720)
+unshaded = true
+scene_properties_keys = PackedStringArray("main_menu.gd")
+
+[node name="VirtualKeyboard" parent="." unique_id=369613484 instance=ExtResource("4_3xm3d")]
+transform = Transform3D(1, 0, 0, 0, 0.894942, 0.446182, 0, -0.446182, 0.894942, 0, -1, -1)
+collision_layer = 5242880
+scene_properties_keys = PackedStringArray("virtual_keyboard_2d.gd")

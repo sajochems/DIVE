@@ -1,0 +1,443 @@
+[gd_scene format=3 uid="uid://cvl0ljqsfwggy"]
+
+[ext_resource type="Script" uid="uid://dtgaoodkt11gj" path="res://scripts/players/spectator_camera.gd" id="1_pyckg"]
+[ext_resource type="Texture2D" uid="uid://cbinj1wai14fh" path="res://addons/volumetric_fog_quad_mesh_texture.webp" id="2_fjm4u"]
+[ext_resource type="FontFile" uid="uid://bbhdudayi1jn0" path="res://addons/JetBrainsMono-Bold.ttf" id="3_fjm4u"]
+[ext_resource type="Theme" uid="uid://dnthkdvputw14" path="res://assets/themes/spectator_ui.tres" id="3_xwpwy"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3xcer"]
+shading_mode = 0
+albedo_texture = ExtResource("2_fjm4u")
+distance_fade_mode = 1
+distance_fade_max_distance = 0.0
+
+[sub_resource type="QuadMesh" id="QuadMesh_f5a1w"]
+material = SubResource("StandardMaterial3D_3xcer")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w7cdr"]
+shading_mode = 0
+albedo_color = Color(1, 1, 1, 0.392157)
+albedo_texture = ExtResource("2_fjm4u")
+distance_fade_mode = 1
+distance_fade_max_distance = 0.0
+
+[sub_resource type="QuadMesh" id="QuadMesh_sfkqp"]
+material = SubResource("StandardMaterial3D_w7cdr")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4y3st"]
+shading_mode = 0
+albedo_color = Color(1, 1, 1, 0.196078)
+albedo_texture = ExtResource("2_fjm4u")
+distance_fade_mode = 1
+distance_fade_max_distance = 0.0
+
+[sub_resource type="QuadMesh" id="QuadMesh_3uu7t"]
+material = SubResource("StandardMaterial3D_4y3st")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3a887"]
+shading_mode = 0
+albedo_color = Color(0.733005, 0.733005, 0.733005, 1)
+
+[sub_resource type="QuadMesh" id="QuadMesh_r2xlf"]
+material = SubResource("StandardMaterial3D_3a887")
+size = Vector2(10, 10)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fjm4u"]
+bg_color = Color(0.147672, 0.147672, 0.147672, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.377919, 0.377919, 0.377919, 1)
+
+[node name="SpectatorCamera" type="Node3D" unique_id=1953426380]
+script = ExtResource("1_pyckg")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=9138142]
+
+[node name="FogSphere" type="MeshInstance3D" parent="Camera3D" unique_id=1807448043]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.4)
+mesh = SubResource("QuadMesh_f5a1w")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Camera3D/FogSphere" unique_id=1077342789]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.15)
+mesh = SubResource("QuadMesh_sfkqp")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Camera3D/FogSphere/MeshInstance3D" unique_id=442965431]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.15)
+mesh = SubResource("QuadMesh_3uu7t")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Camera3D/FogSphere/MeshInstance3D/MeshInstance3D" unique_id=2019928606]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.5)
+mesh = SubResource("QuadMesh_r2xlf")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1243851662]
+
+[node name="UI" type="Control" parent="CanvasLayer" unique_id=274684747]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="LeftPanel" type="Panel" parent="CanvasLayer/UI" unique_id=1437206615]
+layout_mode = 1
+offset_right = 250.0
+offset_bottom = 648.0
+theme = ExtResource("3_xwpwy")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/UI/LeftPanel" unique_id=977392557]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 5.0
+offset_top = 5.0
+offset_right = -5.0
+offset_bottom = -201.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/UI/LeftPanel/VBoxContainer" unique_id=148181443]
+layout_mode = 2
+text = "
+Player 1 Control"
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="CanvasLayer/UI/LeftPanel/VBoxContainer" unique_id=2083707426]
+layout_mode = 2
+
+[node name="FogButtonP1" type="Button" parent="CanvasLayer/UI/LeftPanel/VBoxContainer" unique_id=1553502552]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Toggle Fog"
+
+[node name="Label2" type="Label" parent="CanvasLayer/UI/LeftPanel/VBoxContainer" unique_id=1672544973]
+layout_mode = 2
+text = "Fog Status:"
+horizontal_alignment = 1
+
+[node name="FogLabelP1" type="Label" parent="CanvasLayer/UI/LeftPanel/VBoxContainer" unique_id=62746135]
+layout_mode = 2
+text = "Enabled"
+horizontal_alignment = 1
+
+[node name="HSeparator2" type="HSeparator" parent="CanvasLayer/UI/LeftPanel/VBoxContainer" unique_id=154068668]
+layout_mode = 2
+
+[node name="TeleportButtonP1" type="Button" parent="CanvasLayer/UI/LeftPanel/VBoxContainer" unique_id=281228264]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Reset Player"
+
+[node name="Label3" type="Label" parent="CanvasLayer/UI/LeftPanel/VBoxContainer" unique_id=971936310]
+layout_mode = 2
+text = "Use button to reset 
+player height 
+back to the 
+beginning height"
+horizontal_alignment = 1
+
+[node name="HSeparator3" type="HSeparator" parent="CanvasLayer/UI/LeftPanel/VBoxContainer" unique_id=355258228]
+layout_mode = 2
+
+[node name="Player1InfoLabel" type="Label" parent="CanvasLayer/UI/LeftPanel/VBoxContainer" unique_id=1461051686]
+layout_mode = 2
+text = "Player 1 info:"
+horizontal_alignment = 1
+
+[node name="ConnectionStatusPlayer1" type="Label" parent="CanvasLayer/UI/LeftPanel/VBoxContainer" unique_id=521022958]
+layout_mode = 2
+text = "Connection Status"
+horizontal_alignment = 1
+
+[node name="HSeparator4" type="HSeparator" parent="CanvasLayer/UI/LeftPanel/VBoxContainer" unique_id=1950197844]
+layout_mode = 2
+
+[node name="RotateButtonP1" type="Button" parent="CanvasLayer/UI/LeftPanel/VBoxContainer" unique_id=354188946]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Flip Player's side"
+
+[node name="RightPanel" type="Panel" parent="CanvasLayer/UI" unique_id=1761986363]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = 862.0
+offset_right = 1112.0
+offset_bottom = 648.0
+grow_horizontal = 0
+theme = ExtResource("3_xwpwy")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/UI/RightPanel" unique_id=1235303303]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 5.0
+offset_top = 5.0
+offset_right = -5.0
+offset_bottom = -201.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/UI/RightPanel/VBoxContainer" unique_id=871153291]
+layout_mode = 2
+text = "
+Player 2 Control"
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="CanvasLayer/UI/RightPanel/VBoxContainer" unique_id=64612525]
+layout_mode = 2
+
+[node name="FogButtonP2" type="Button" parent="CanvasLayer/UI/RightPanel/VBoxContainer" unique_id=1706579978]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Toggle Fog"
+
+[node name="Label2" type="Label" parent="CanvasLayer/UI/RightPanel/VBoxContainer" unique_id=665780709]
+layout_mode = 2
+text = "Fog Status:"
+horizontal_alignment = 1
+
+[node name="FogLabelP2" type="Label" parent="CanvasLayer/UI/RightPanel/VBoxContainer" unique_id=1919582690]
+layout_mode = 2
+text = "Enabled"
+horizontal_alignment = 1
+
+[node name="HSeparator2" type="HSeparator" parent="CanvasLayer/UI/RightPanel/VBoxContainer" unique_id=644040581]
+layout_mode = 2
+
+[node name="TeleportButtonP2" type="Button" parent="CanvasLayer/UI/RightPanel/VBoxContainer" unique_id=152311384]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Reset Player"
+
+[node name="Label3" type="Label" parent="CanvasLayer/UI/RightPanel/VBoxContainer" unique_id=843002350]
+layout_mode = 2
+text = "Use button to reset 
+player height 
+back to the 
+beginning height"
+horizontal_alignment = 1
+
+[node name="HSeparator3" type="HSeparator" parent="CanvasLayer/UI/RightPanel/VBoxContainer" unique_id=719495710]
+layout_mode = 2
+
+[node name="Player2InfoLabel" type="Label" parent="CanvasLayer/UI/RightPanel/VBoxContainer" unique_id=723037742]
+layout_mode = 2
+text = "Player 2 info:"
+horizontal_alignment = 1
+
+[node name="ConnectionStatusPlayer2" type="Label" parent="CanvasLayer/UI/RightPanel/VBoxContainer" unique_id=1358779791]
+layout_mode = 2
+text = "Connection Status"
+horizontal_alignment = 1
+
+[node name="HSeparator4" type="HSeparator" parent="CanvasLayer/UI/RightPanel/VBoxContainer" unique_id=2048645557]
+layout_mode = 2
+
+[node name="RotateButtonP2" type="Button" parent="CanvasLayer/UI/RightPanel/VBoxContainer" unique_id=670401503]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Flip Player's side"
+
+[node name="BottomPanel" type="Panel" parent="CanvasLayer/UI" unique_id=792665510]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = 408.0
+offset_right = 1132.0
+offset_bottom = 608.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("3_xwpwy")
+
+[node name="GlobalPanel" type="Panel" parent="CanvasLayer/UI/BottomPanel" unique_id=188386413]
+layout_mode = 0
+offset_right = 200.0
+offset_bottom = 200.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/UI/BottomPanel/GlobalPanel" unique_id=1090394315]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 5.0
+offset_top = 5.0
+offset_right = -5.0
+offset_bottom = -5.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="CanvasLayer/UI/BottomPanel/GlobalPanel/VBoxContainer" unique_id=364170348]
+layout_mode = 2
+text = "Timer length:"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/UI/BottomPanel/GlobalPanel/VBoxContainer" unique_id=1084725167]
+layout_mode = 2
+alignment = 1
+
+[node name="TimerSetBox" type="SpinBox" parent="CanvasLayer/UI/BottomPanel/GlobalPanel/VBoxContainer/HBoxContainer" unique_id=2135525018]
+layout_mode = 2
+size_flags_horizontal = 4
+max_value = 10000.0
+step = 10.0
+
+[node name="Label" type="Label" parent="CanvasLayer/UI/BottomPanel/GlobalPanel/VBoxContainer/HBoxContainer" unique_id=1959113745]
+layout_mode = 2
+text = "Seconds"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="CanvasLayer/UI/BottomPanel/GlobalPanel/VBoxContainer" unique_id=2102594181]
+layout_mode = 2
+alignment = 1
+
+[node name="TimerStartButton" type="Button" parent="CanvasLayer/UI/BottomPanel/GlobalPanel/VBoxContainer/HBoxContainer2" unique_id=2145745029]
+layout_mode = 2
+size_flags_horizontal = 4
+text = " Start "
+
+[node name="Label" type="Label" parent="CanvasLayer/UI/BottomPanel/GlobalPanel/VBoxContainer/HBoxContainer2" unique_id=241952859]
+layout_mode = 2
+text = " "
+
+[node name="TimerStopButton" type="Button" parent="CanvasLayer/UI/BottomPanel/GlobalPanel/VBoxContainer/HBoxContainer2" unique_id=2029478929]
+layout_mode = 2
+text = " Stop "
+
+[node name="HSeparator" type="HSeparator" parent="CanvasLayer/UI/BottomPanel/GlobalPanel/VBoxContainer" unique_id=1963118053]
+layout_mode = 2
+
+[node name="ResetPlayersButton" type="Button" parent="CanvasLayer/UI/BottomPanel/GlobalPanel/VBoxContainer" unique_id=1359299597]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Reset all players"
+
+[node name="PlayersFogButton" type="Button" parent="CanvasLayer/UI/BottomPanel/GlobalPanel/VBoxContainer" unique_id=1096981190]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Toggle all Fog"
+
+[node name="TimerPanel" type="Panel" parent="CanvasLayer/UI/BottomPanel" unique_id=973884165]
+layout_mode = 1
+offset_left = 195.0
+offset_right = 345.0
+offset_bottom = 200.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/UI/BottomPanel/TimerPanel" unique_id=596194304]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 5.0
+offset_top = 5.0
+offset_right = -5.0
+offset_bottom = -5.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label3" type="Label" parent="CanvasLayer/UI/BottomPanel/TimerPanel/VBoxContainer" unique_id=1487174238]
+layout_mode = 2
+text = "Timer Left"
+horizontal_alignment = 1
+
+[node name="RemainingTimeLabel" type="Label" parent="CanvasLayer/UI/BottomPanel/TimerPanel/VBoxContainer" unique_id=1142427659]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_fjm4u")
+text = "00:00:00:000"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="CanvasLayer/UI/BottomPanel/TimerPanel/VBoxContainer" unique_id=687219975]
+layout_mode = 2
+text = "Running Time"
+horizontal_alignment = 1
+
+[node name="RunningTimeLabel" type="Label" parent="CanvasLayer/UI/BottomPanel/TimerPanel/VBoxContainer" unique_id=1591070102]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_fjm4u")
+text = "00:00:00:000"
+horizontal_alignment = 1
+
+[node name="Label" type="Label" parent="CanvasLayer/UI/BottomPanel/TimerPanel/VBoxContainer" unique_id=699745750]
+layout_mode = 2
+text = "Sytem Time"
+horizontal_alignment = 1
+
+[node name="SystemTimeLabel" type="Label" parent="CanvasLayer/UI/BottomPanel/TimerPanel/VBoxContainer" unique_id=1766113221]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_fjm4u")
+text = "00:00:00:000"
+horizontal_alignment = 1
+
+[node name="ExperimentPanel" type="Panel" parent="CanvasLayer/UI/BottomPanel" unique_id=604804293]
+layout_mode = 0
+offset_left = 340.0
+offset_right = 740.0
+offset_bottom = 200.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/UI/BottomPanel/ExperimentPanel" unique_id=2132979387]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 5.0
+offset_top = 5.0
+offset_right = -5.0
+offset_bottom = -5.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="ExperimentState" type="Label" parent="CanvasLayer/UI/BottomPanel/ExperimentPanel/VBoxContainer" unique_id=712850111]
+layout_mode = 2
+text = "Press + to start the experiment"
+horizontal_alignment = 1
+
+[node name="Spacer" type="Label" parent="CanvasLayer/UI/BottomPanel/ExperimentPanel/VBoxContainer" unique_id=1632043849]
+layout_mode = 2
+
+[node name="Spacer2" type="Label" parent="CanvasLayer/UI/BottomPanel/ExperimentPanel/VBoxContainer" unique_id=1261482901]
+layout_mode = 2
+
+[node name="LeaveButton" type="Button" parent="CanvasLayer/UI/BottomPanel/ExperimentPanel/VBoxContainer" unique_id=634787526]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "End Experience and return to Menu"
+
+[node name="LoggerPanel" type="Panel" parent="CanvasLayer/UI/BottomPanel" unique_id=598689345]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -407.0
+offset_top = -87.5
+offset_right = -7.0
+offset_bottom = 87.5
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_fjm4u")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="CanvasLayer/UI/BottomPanel/LoggerPanel" unique_id=1280748208]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -195.0
+offset_top = -82.5
+offset_right = 195.0
+offset_bottom = 82.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LoggerLabel" type="Label" parent="CanvasLayer/UI/BottomPanel/LoggerPanel/ScrollContainer" unique_id=1052079395]
+layout_mode = 2

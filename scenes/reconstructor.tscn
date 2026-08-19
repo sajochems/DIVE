@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://ddmmbwuigt5bd"]
+
+[ext_resource type="Script" uid="uid://bqv7ghwmjpdqf" path="res://scripts/util/reconstructor.gd" id="1_nd5ol"]
+[ext_resource type="Script" uid="uid://djbegw1wbaw72" path="res://scripts/util/replay_controller.gd" id="2_35yqn"]
+[ext_resource type="PackedScene" uid="uid://57bole61ertf" path="res://scenes/players/avatar.tscn" id="3_adxhj"]
+[ext_resource type="PackedScene" uid="uid://dceb4s2dcp571" path="res://scenes/ui/replay_ui.tscn" id="4_nd5ol"]
+[ext_resource type="PackedScene" uid="uid://bq86r4yll8po" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/left_fullglove_low.tscn" id="5_adxhj"]
+[ext_resource type="PackedScene" uid="uid://xqimcf20s2jp" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/right_fullglove_low.tscn" id="6_58d7f"]
+
+[node name="Reconstructor" type="Node3D" unique_id=789374588]
+script = ExtResource("1_nd5ol")
+
+[node name="ReplayController" type="Node3D" parent="." unique_id=1308768972]
+script = ExtResource("2_35yqn")
+
+[node name="Avatar1" parent="." unique_id=941654940 instance=ExtResource("3_adxhj")]
+
+[node name="Avatar2" parent="." unique_id=1483301360 instance=ExtResource("3_adxhj")]
+
+[node name="ReplayUI" parent="." unique_id=4514759 instance=ExtResource("4_nd5ol")]
+
+[node name="LeftHand" parent="." unique_id=1290627215 instance=ExtResource("5_adxhj")]
+
+[node name="RightHand" parent="." unique_id=1551918305 instance=ExtResource("6_58d7f")]

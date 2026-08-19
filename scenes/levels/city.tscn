@@ -1,0 +1,76 @@
+[gd_scene format=3 uid="uid://doltvbw5bp6ys"]
+
+[ext_resource type="Script" uid="uid://5v26hckr28q" path="res://scripts/main.gd" id="1_3lt63"]
+[ext_resource type="PackedScene" uid="uid://nn8jorkwm5ue" path="res://scenes/world_environment.tscn" id="2_0hjwn"]
+[ext_resource type="PackedScene" uid="uid://pr378kjwfiur" path="res://scenes/city_world.tscn" id="3_wyqnf"]
+[ext_resource type="Texture2D" uid="uid://lgebfwhi65as" path="res://assets/Textures/Grass002_4K-JPG/Grass002_4K_Color.jpg" id="4_0hjwn"]
+[ext_resource type="LightmapGIData" uid="uid://7orlwl0mate0" path="res://city.lmbake" id="4_nj888"]
+[ext_resource type="Texture2D" uid="uid://cr2x6saqinnkm" path="res://assets/Textures/Grass002_4K-JPG/Grass002_4K_NormalGL.jpg" id="5_wyqnf"]
+[ext_resource type="Texture2D" uid="uid://bd5dv1t56nu6t" path="res://assets/Textures/Grass002_4K-JPG/Grass002_4K_Roughness.jpg" id="6_dx8ow"]
+[ext_resource type="AudioStream" uid="uid://oauuh8c1rad7" path="res://assets/audio/shut_up_ghost-smooth-cold-wind-looped-135538.mp3" id="7_wyqnf"]
+[ext_resource type="AudioStream" uid="uid://c52rjut2hyaxx" path="res://assets/audio/cliffordjohnson-city-above-far-ambience-car-479129.mp3" id="8_dx8ow"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pksu5"]
+albedo_texture = ExtResource("4_0hjwn")
+roughness_texture = ExtResource("6_dx8ow")
+roughness_texture_channel = 4
+normal_enabled = true
+normal_scale = 0.2
+normal_texture = ExtResource("5_wyqnf")
+uv1_triplanar = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_nqxve"]
+lightmap_size_hint = Vector2i(2004, 1006)
+material = SubResource("StandardMaterial3D_pksu5")
+add_uv2 = true
+size = Vector3(200, 0.01, 200)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_nj888"]
+size = Vector3(100, 0.01, 100)
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_4hfmj"]
+
+[node name="Level_001" type="Node3D" unique_id=1202645334]
+script = ExtResource("1_3lt63")
+
+[node name="WorldEnvironment" parent="." unique_id=772958322 instance=ExtResource("2_0hjwn")]
+
+[node name="World" type="Node3D" parent="." unique_id=2071396098]
+
+[node name="Environment" type="Node3D" parent="World" unique_id=64928401]
+
+[node name="City" parent="World/Environment" unique_id=1018996157 instance=ExtResource("3_wyqnf")]
+
+[node name="City2" parent="World/Environment" unique_id=1321024850 instance=ExtResource("3_wyqnf")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
+
+[node name="Floor" type="Node3D" parent="World/Environment" unique_id=84686420]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.05, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="World/Environment/Floor" unique_id=1511926999]
+mesh = SubResource("BoxMesh_nqxve")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="World/Environment/Floor/MeshInstance3D" unique_id=1330349194]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Environment/Floor/MeshInstance3D/StaticBody3D" unique_id=854183283]
+shape = SubResource("BoxShape3D_nj888")
+
+[node name="windAudio" type="AudioStreamPlayer3D" parent="World/Environment" unique_id=1018490717]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 85, 0)
+stream = ExtResource("7_wyqnf")
+autoplay = true
+parameters/looping = true
+
+[node name="cityAudio" type="AudioStreamPlayer3D" parent="World/Environment" unique_id=642831045]
+stream = ExtResource("8_dx8ow")
+autoplay = true
+parameters/looping = true
+
+[node name="BridgeController" type="Node3D" parent="World" unique_id=1454087819]
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="." unique_id=424821857]
+replication_config = SubResource("SceneReplicationConfig_4hfmj")
+
+[node name="LightmapGI" type="LightmapGI" parent="." unique_id=1333235247]
+quality = 0
+light_data = ExtResource("4_nj888")

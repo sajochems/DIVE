@@ -1,0 +1,241 @@
+[gd_scene format=3 uid="uid://bqne3mw5nmmrq"]
+
+[ext_resource type="Script" uid="uid://cdxdrp7tf7sr4" path="res://scripts/ui/settings_menu.gd" id="1_hayap"]
+[ext_resource type="Theme" uid="uid://bpax0y6qshynb" path="res://assets/themes/menu_ui.tres" id="2_mhswj"]
+
+[node name="SettingsMenu" type="Control" unique_id=1792237442]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hayap")
+
+[node name="Panel" type="Panel" parent="." unique_id=1422804321]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_mhswj")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel" unique_id=1337161540]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="GlobalSettingsVBoxContainer" type="VBoxContainer" parent="Panel/HBoxContainer" unique_id=892453142]
+layout_mode = 2
+alignment = 1
+
+[node name="LocalIP" type="Label" parent="Panel/HBoxContainer/GlobalSettingsVBoxContainer" unique_id=1539740950]
+layout_mode = 2
+text = "xxx.xxx.x.xxx"
+
+[node name="IPBox" type="HBoxContainer" parent="Panel/HBoxContainer/GlobalSettingsVBoxContainer" unique_id=109239149]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Panel/HBoxContainer/GlobalSettingsVBoxContainer/IPBox" unique_id=431041759]
+layout_mode = 2
+text = "IP Address: "
+
+[node name="IPAddressBox" type="LineEdit" parent="Panel/HBoxContainer/GlobalSettingsVBoxContainer/IPBox" unique_id=229670325]
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "Enter ip adress of host"
+
+[node name="FileBox" type="HBoxContainer" parent="Panel/HBoxContainer/GlobalSettingsVBoxContainer" unique_id=130798558]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Panel/HBoxContainer/GlobalSettingsVBoxContainer/FileBox" unique_id=846621269]
+layout_mode = 2
+text = "File Location "
+
+[node name="FileLocationBox" type="LineEdit" parent="Panel/HBoxContainer/GlobalSettingsVBoxContainer/FileBox" unique_id=989759870]
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "Enter location for file storage"
+
+[node name="SampleFrequencyHBoxContainer2" type="HBoxContainer" parent="Panel/HBoxContainer/GlobalSettingsVBoxContainer" unique_id=764262519]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Panel/HBoxContainer/GlobalSettingsVBoxContainer/SampleFrequencyHBoxContainer2" unique_id=1828953668]
+layout_mode = 2
+text = "Sample Frequency: "
+
+[node name="SampleFrequencySpinBox" type="SpinBox" parent="Panel/HBoxContainer/GlobalSettingsVBoxContainer/SampleFrequencyHBoxContainer2" unique_id=1014718550]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+min_value = 1.0
+max_value = 300.0
+value = 1.0
+suffix = "Hz"
+
+[node name="HSeparator2" type="HSeparator" parent="Panel/HBoxContainer/GlobalSettingsVBoxContainer" unique_id=138027389]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/HBoxContainer/GlobalSettingsVBoxContainer" unique_id=1714656008]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Panel/HBoxContainer/GlobalSettingsVBoxContainer/HBoxContainer" unique_id=1405571604]
+layout_mode = 2
+text = "Selected Level: "
+
+[node name="SelectLevel" type="MenuButton" parent="Panel/HBoxContainer/GlobalSettingsVBoxContainer/HBoxContainer" unique_id=1594177918]
+layout_mode = 2
+text = "No level selected"
+
+[node name="HeightRow" type="HBoxContainer" parent="Panel/HBoxContainer/GlobalSettingsVBoxContainer" unique_id=554900061]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Panel/HBoxContainer/GlobalSettingsVBoxContainer/HeightRow" unique_id=1354689407]
+layout_mode = 2
+text = "Height:  "
+
+[node name="HeightBox" type="SpinBox" parent="Panel/HBoxContainer/GlobalSettingsVBoxContainer/HeightRow" unique_id=2094419680]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+max_value = 83.0
+step = 0.1
+value = 40.0
+alignment = 1
+suffix = "m"
+
+[node name="DistanceRow" type="HBoxContainer" parent="Panel/HBoxContainer/GlobalSettingsVBoxContainer" unique_id=733303498]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Panel/HBoxContainer/GlobalSettingsVBoxContainer/DistanceRow" unique_id=562066638]
+layout_mode = 2
+text = "Length of Plank:  "
+
+[node name="DistanceBox" type="SpinBox" parent="Panel/HBoxContainer/GlobalSettingsVBoxContainer/DistanceRow" unique_id=755539519]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+max_value = 60.0
+step = 0.01
+value = 6.0
+alignment = 1
+suffix = "m"
+
+[node name="DistanceLabel" type="Label" parent="Panel/HBoxContainer/GlobalSettingsVBoxContainer" unique_id=1042638901]
+layout_mode = 2
+text = "Distance between players"
+
+[node name="WidthRow" type="HBoxContainer" parent="Panel/HBoxContainer/GlobalSettingsVBoxContainer" unique_id=1467212670]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Panel/HBoxContainer/GlobalSettingsVBoxContainer/WidthRow" unique_id=1399782333]
+layout_mode = 2
+text = "Width of Plank:  "
+
+[node name="WidthBox" type="SpinBox" parent="Panel/HBoxContainer/GlobalSettingsVBoxContainer/WidthRow" unique_id=888122479]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+max_value = 3.0
+step = 0.01
+value = 0.8
+alignment = 1
+suffix = "m"
+
+[node name="PlatformWidthRow" type="HBoxContainer" parent="Panel/HBoxContainer/GlobalSettingsVBoxContainer" unique_id=802911412]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Panel/HBoxContainer/GlobalSettingsVBoxContainer/PlatformWidthRow" unique_id=2100820181]
+layout_mode = 2
+text = "Width of Platform:  "
+
+[node name="PlatformWidthBox" type="SpinBox" parent="Panel/HBoxContainer/GlobalSettingsVBoxContainer/PlatformWidthRow" unique_id=1168461102]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+max_value = 3.0
+step = 0.01
+value = 0.8
+alignment = 1
+suffix = "m"
+
+[node name="HSeparator" type="HSeparator" parent="Panel/HBoxContainer/GlobalSettingsVBoxContainer" unique_id=742699595]
+layout_mode = 2
+
+[node name="AcqknowledgeIP" type="LineEdit" parent="Panel/HBoxContainer/GlobalSettingsVBoxContainer" unique_id=324218258]
+layout_mode = 2
+placeholder_text = "Enter Interface IP"
+
+[node name="AcqknowledgePort" type="LineEdit" parent="Panel/HBoxContainer/GlobalSettingsVBoxContainer" unique_id=1082695579]
+layout_mode = 2
+placeholder_text = "Enter Acqknowledge Port"
+
+[node name="TestButton" type="Button" parent="Panel/HBoxContainer/GlobalSettingsVBoxContainer" unique_id=1261373288]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+text = "Click to test acqknowledge"
+
+[node name="VSeparator2" type="VSeparator" parent="Panel/HBoxContainer" unique_id=999511683]
+layout_mode = 2
+
+[node name="ButtonsVBoxContainer" type="VBoxContainer" parent="Panel/HBoxContainer" unique_id=1782897051]
+layout_mode = 2
+alignment = 1
+
+[node name="HostBaselineButton" type="Button" parent="Panel/HBoxContainer/ButtonsVBoxContainer" unique_id=412186944]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+text = "Host Baseline Server"
+
+[node name="HostButton" type="Button" parent="Panel/HBoxContainer/ButtonsVBoxContainer" unique_id=891022554]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+text = "Host Server"
+
+[node name="ReconstructionButton" type="Button" parent="Panel/HBoxContainer/ButtonsVBoxContainer" unique_id=1865951734]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+text = "Reconstruction"
+
+[node name="BackButton" type="Button" parent="Panel/HBoxContainer/ButtonsVBoxContainer" unique_id=737242414]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+text = "Back"
+
+[node name="VSeparator3" type="VSeparator" parent="Panel/HBoxContainer" unique_id=1770224399]
+layout_mode = 2
+
+[node name="PlayerSettingsVBoxContainer2" type="VBoxContainer" parent="Panel/HBoxContainer" unique_id=724578234]
+layout_mode = 2
+alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/HBoxContainer/PlayerSettingsVBoxContainer2" unique_id=1751424385]
+layout_mode = 2
+
+[node name="Player1" type="Label" parent="Panel/HBoxContainer/PlayerSettingsVBoxContainer2/HBoxContainer" unique_id=2063418871]
+layout_mode = 2
+text = "Player 1"
+
+[node name="PlayerSelector" type="CheckButton" parent="Panel/HBoxContainer/PlayerSettingsVBoxContainer2/HBoxContainer" unique_id=1551964002]
+layout_mode = 2
+
+[node name="Player2" type="Label" parent="Panel/HBoxContainer/PlayerSettingsVBoxContainer2/HBoxContainer" unique_id=1545932241]
+layout_mode = 2
+text = "Player 2"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/HBoxContainer/PlayerSettingsVBoxContainer2" unique_id=1549697109]
+layout_mode = 2
+
+[node name="FallingEffectLabel" type="Label" parent="Panel/HBoxContainer/PlayerSettingsVBoxContainer2/VBoxContainer" unique_id=1622491398]
+layout_mode = 2
+text = "Falling Effect"
+
+[node name="FallingDropdown" type="OptionButton" parent="Panel/HBoxContainer/PlayerSettingsVBoxContainer2/VBoxContainer" unique_id=105634680]
+layout_mode = 2
+
+[node name="ImpactEffectLabel" type="Label" parent="Panel/HBoxContainer/PlayerSettingsVBoxContainer2/VBoxContainer" unique_id=708869745]
+layout_mode = 2
+text = "Impact Effect"
+
+[node name="ImpactDropdown" type="OptionButton" parent="Panel/HBoxContainer/PlayerSettingsVBoxContainer2/VBoxContainer" unique_id=107541064]
+layout_mode = 2

@@ -1,0 +1,64 @@
+[gd_scene load_steps=9 format=3 uid="uid://batd5kf6ytxjs"]
+
+[ext_resource type="Material" uid="uid://d2c4xg45wp84b" path="res://assets/Textures/Materials/Facade001.tres" id="4_fxr1q"]
+[ext_resource type="Material" uid="uid://eivyh5o3363i" path="res://assets/Textures/Materials/Concrete.tres" id="5_lquwy"]
+[ext_resource type="Texture2D" uid="uid://bcdarv366lxpf" path="res://assets/Textures/facade_1-4K/4K-facade_1_basecolor.png" id="6_gv6rf"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_lt4bk"]
+lightmap_size_hint = Vector2i(229, 798)
+add_uv2 = true
+size = Vector3(22.5, 68, 22.5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_3k0ct"]
+lightmap_size_hint = Vector2i(234, 126)
+add_uv2 = true
+size = Vector3(23, 0.5, 23)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k237p"]
+albedo_texture = ExtResource("6_gv6rf")
+uv1_scale = Vector3(0.3, 0.3, 0.3)
+uv1_offset = Vector3(0, 0.5, 0.1)
+uv1_triplanar = true
+uv1_world_triplanar = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_2x8dq"]
+lightmap_size_hint = Vector2i(141, 113)
+add_uv2 = true
+size = Vector3(10, 2, 17.5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_jiatl"]
+lightmap_size_hint = Vector2i(143, 97)
+add_uv2 = true
+size = Vector3(10.2, 0.25, 17.7)
+
+[node name="HK Building 4" type="Node3D"]
+
+[node name="Base" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 34, 0)
+material_override = ExtResource("4_fxr1q")
+mesh = SubResource("BoxMesh_lt4bk")
+
+[node name="Roof" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 68, 0)
+material_override = ExtResource("5_lquwy")
+mesh = SubResource("BoxMesh_3k0ct")
+
+[node name="LittleTop" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.75, 69, 0)
+material_override = SubResource("StandardMaterial3D_k237p")
+mesh = SubResource("BoxMesh_2x8dq")
+
+[node name="RoofTop" type="MeshInstance3D" parent="LittleTop"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.125, 0)
+material_override = ExtResource("5_lquwy")
+mesh = SubResource("BoxMesh_jiatl")
+
+[node name="LittleTop2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.75, 69, 0)
+material_override = SubResource("StandardMaterial3D_k237p")
+mesh = SubResource("BoxMesh_2x8dq")
+
+[node name="RoofTop" type="MeshInstance3D" parent="LittleTop2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.125, 0)
+material_override = ExtResource("5_lquwy")
+mesh = SubResource("BoxMesh_jiatl")

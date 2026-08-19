@@ -1,0 +1,67 @@
+[gd_scene load_steps=11 format=3 uid="uid://c8bxflg6nv3qs"]
+
+[ext_resource type="Script" uid="uid://djl0iqvyjtwyi" path="res://scripts/interaction/interactable.gd" id="2_4whkl"]
+[ext_resource type="Script" uid="uid://cpig8psrdovxf" path="res://scripts/interaction/actions/leave_action.gd" id="2_t51tm"]
+[ext_resource type="Script" uid="uid://bfmhisnmxev5s" path="res://scripts/interaction/interactable_area.gd" id="3_t51tm"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4agvo"]
+transparency = 1
+shading_mode = 0
+albedo_color = Color(1, 1, 0, 0.309804)
+
+[sub_resource type="SphereMesh" id="SphereMesh_xb0g0"]
+material = SubResource("StandardMaterial3D_4agvo")
+radius = 0.02
+height = 0.04
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_pduqx"]
+radius = 0.03
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jxs5c"]
+albedo_color = Color(0.416754, 8.48304e-07, 2.16588e-07, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_jxs5c"]
+material = SubResource("StandardMaterial3D_jxs5c")
+top_radius = 0.001
+bottom_radius = 0.05
+height = 0.07
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4whkl"]
+albedo_color = Color(0.301105, 3.51956e-07, 9.62615e-08, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_4whkl"]
+material = SubResource("StandardMaterial3D_4whkl")
+size = Vector3(0.05, 0.25, 0.05)
+
+[node name="LeaveButton" type="Node3D"]
+
+[node name="Indicator" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.648042, 1.07181, 0.0191304)
+mesh = SubResource("SphereMesh_xb0g0")
+script = ExtResource("2_t51tm")
+
+[node name="Interactable" type="Node3D" parent="Indicator" node_paths=PackedStringArray("actions")]
+script = ExtResource("2_4whkl")
+actions = [NodePath("../ActionLeave")]
+allowed_interactor_groups = Array[String](["interaction_hand"])
+metadata/_custom_type_script = "uid://djl0iqvyjtwyi"
+
+[node name="InteractableArea" type="Area3D" parent="Indicator" node_paths=PackedStringArray("interactable")]
+script = ExtResource("3_t51tm")
+interactable = NodePath("../Interactable")
+metadata/_custom_type_script = "uid://bfmhisnmxev5s"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Indicator/InteractableArea"]
+shape = SubResource("SphereShape3D_pduqx")
+
+[node name="ActionLeave" type="Node" parent="Indicator"]
+script = ExtResource("2_t51tm")
+metadata/_custom_type_script = "uid://cpig8psrdovxf"
+
+[node name="Arrow" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 0.592794, 1.072, 0.019)
+mesh = SubResource("CylinderMesh_jxs5c")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Arrow"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.148802, 0)
+mesh = SubResource("BoxMesh_4whkl")

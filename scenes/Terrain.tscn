@@ -1,0 +1,38 @@
+[gd_scene load_steps=11 format=3 uid="uid://x4emj7q4kl5a"]
+
+[ext_resource type="Script" uid="uid://3j4gt7i8rqvq" path="res://addons/zylann.hterrain/hterrain.gd" id="1_c45jm"]
+[ext_resource type="Resource" uid="uid://b38w387aqsq50" path="res://assets/Terrain/data.hterrain" id="2_awl8a"]
+[ext_resource type="Script" uid="uid://wgle3du3shdk" path="res://addons/zylann.hterrain/hterrain_texture_set.gd" id="3_ikmwn"]
+[ext_resource type="Texture2D" uid="uid://lgebfwhi65as" path="res://assets/Textures/Grass002_4K-JPG/Grass002_4K_Color.jpg" id="4_7x3kn"]
+[ext_resource type="Texture2D" uid="uid://vpvuriynr6wd" path="res://assets/Textures/aerial_rocks_04/aerial_rocks_04_diff_4k.jpg" id="5_xdnbq"]
+[ext_resource type="Texture2D" uid="uid://di6osxbsvgmyg" path="res://assets/Textures/grass_path_2/grass_path_2_diff_4k.jpg" id="6_i3mjt"]
+[ext_resource type="Texture2D" uid="uid://cr2x6saqinnkm" path="res://assets/Textures/Grass002_4K-JPG/Grass002_4K_NormalGL.jpg" id="6_yaj1f"]
+[ext_resource type="Texture2D" uid="uid://b7ssaayoypolg" path="res://assets/Textures/aerial_rocks_04/aerial_rocks_04_nor_gl_4k.jpg" id="7_i3mjt"]
+[ext_resource type="Texture2D" uid="uid://c0kr22uc7itkg" path="res://assets/Textures/grass_path_2/grass_path_2_nor_gl_4k.jpg" id="9_xnl6a"]
+
+[sub_resource type="Resource" id="Resource_c86l1"]
+script = ExtResource("3_ikmwn")
+mode = 0
+textures = [[ExtResource("4_7x3kn"), ExtResource("5_xdnbq"), ExtResource("6_i3mjt")], [ExtResource("6_yaj1f"), ExtResource("7_i3mjt"), ExtResource("9_xnl6a")]]
+
+[node name="Terrain" type="Node3D"]
+
+[node name="HTerrain" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -256.5, -0.01, 0)
+script = ExtResource("1_c45jm")
+_terrain_data = ExtResource("2_awl8a")
+chunk_size = 32
+collision_enabled = true
+collision_layer = 1
+collision_mask = 1
+shader_type = "Classic4Lite"
+custom_shader = null
+custom_globalmap_shader = null
+texture_set = SubResource("Resource_c86l1")
+render_layers = 1
+cast_shadow = 1
+shader_params/u_ground_uv_scale = 20
+shader_params/u_depth_blending = true
+shader_params/u_triplanar = true
+shader_params/u_tile_reduction = null
+metadata/_custom_type_script = "uid://cs1ecv0hp361i"

@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://ch73ddyciw8qn"]
+
+[ext_resource type="Material" uid="uid://j6ba1b8swx26" path="res://assets/Textures/Materials/Facade006.tres" id="9_vnyf8"]
+[ext_resource type="Material" uid="uid://eivyh5o3363i" path="res://assets/Textures/Materials/Concrete.tres" id="10_cy0sb"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_ih62v"]
+lightmap_size_hint = Vector2i(219, 711)
+add_uv2 = true
+size = Vector3(18, 58, 25)
+
+[sub_resource type="BoxMesh" id="BoxMesh_d1asm"]
+lightmap_size_hint = Vector2i(224, 138)
+add_uv2 = true
+size = Vector3(18.5, 0.5, 25.5)
+
+[node name="Office Building Medium" type="Node3D"]
+
+[node name="Base" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 29, 0)
+material_override = ExtResource("9_vnyf8")
+mesh = SubResource("BoxMesh_ih62v")
+
+[node name="Roof" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 58, 0)
+material_override = ExtResource("10_cy0sb")
+mesh = SubResource("BoxMesh_d1asm")

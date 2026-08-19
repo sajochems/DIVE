@@ -1,0 +1,39 @@
+[gd_scene load_steps=4 format=4 uid="uid://bdggduehjup4f"]
+
+[ext_resource type="Material" uid="uid://cr44gxyt8wvuc" path="res://addons/ParkFurnitures/material/ParkFurniture_mat.tres" id="1_3d5n5"]
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_8jm2d"]
+_surfaces = [{
+"aabb": AABB(-0.664167, 0.005, -0.164167, 0.828333, 1e-05, 0.828333),
+"format": 34896613377,
+"index_count": 12,
+"index_data": PackedByteArray("AAABAAIAAAADAAEAAAACAAQAAAAEAAUA"),
+"name": "ParkFurniture",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 6,
+"vertex_data": PackedByteArray("hpoAAHhlAAAAAAAAAAAAAP//AAAAAAAAAAAAAHhlAAD//wAA//8AAIaaAAD//wAA")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_0auin"]
+resource_name = "parkfurnitures_ParkFurn_Arrow_D"
+_surfaces = [{
+"aabb": AABB(-0.664167, 0.005, -0.164167, 0.828333, 1e-05, 0.828333),
+"attribute_data": PackedByteArray("K8vTVDqsgUB934FAOqzTVH3f01Ru/oFAbv7TVCvLgUA="),
+"format": 34896613399,
+"index_count": 12,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUA"),
+"material": ExtResource("1_3d5n5"),
+"name": "ParkFurniture",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("hpoAAHhl/78AAAAAAAD/v///AAAAAP+/AAAAAHhl/7+GmgAAeGVU1f//AAD//1TVhpoAAP//VNX//wAAAABU1f///3/+//9/////f/7//3+pqqqqqaqqqqmqqqqqqqqq")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_8jm2d")
+
+[node name="ParkFurn_Arrow_D" type="MeshInstance3D"]
+mesh = SubResource("ArrayMesh_0auin")
+skeleton = NodePath("")

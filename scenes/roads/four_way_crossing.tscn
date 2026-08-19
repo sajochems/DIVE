@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://cg7x8py5sjxjd"]
+
+[ext_resource type="PackedScene" uid="uid://dda5s8dwkpfb8" path="res://scenes/roads/straight_road.tscn" id="1_cx5wj"]
+[ext_resource type="Material" uid="uid://ggr6q4i65cl7" path="res://assets/Textures/Materials/Simple_Ashphalt.tres" id="2_sj2d4"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_7i7vi"]
+lightmap_size_hint = Vector2i(50, 29)
+material = ExtResource("2_sj2d4")
+add_uv2 = true
+size = Vector3(4.7, 0, 4.7)
+
+[node name="FourWayCrossing" type="Node3D" unique_id=244423570]
+
+[node name="crossing" type="MeshInstance3D" parent="." unique_id=1995432629]
+mesh = SubResource("BoxMesh_7i7vi")
+
+[node name="StraightRoad" parent="." unique_id=902210312 instance=ExtResource("1_cx5wj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.011, -12.35)
+
+[node name="StraightRoad2" parent="." unique_id=594416601 instance=ExtResource("1_cx5wj")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -12.35, 0, 0)
+
+[node name="StraightRoad3" parent="." unique_id=1333750151 instance=ExtResource("1_cx5wj")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 12.35, 0, 0)
+
+[node name="StraightRoad4" parent="." unique_id=507896311 instance=ExtResource("1_cx5wj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.011, 12.35)

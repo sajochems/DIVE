@@ -1,0 +1,16 @@
+[gd_resource type="StandardMaterial3D" load_steps=5 format=3 uid="uid://d2c4xg45wp84b"]
+
+[ext_resource type="Texture2D" uid="uid://dapmgkll6psn2" path="res://assets/Textures/Facade001_4K-JPG/Facade001_4K_Color.jpg" id="1_dnqcc"]
+[ext_resource type="Texture2D" uid="uid://dr0ucto2y22ys" path="res://assets/Textures/Facade001_4K-JPG/Facade001_4K_Metalness.jpg" id="2_yxsgq"]
+[ext_resource type="Texture2D" uid="uid://b235520cxmdc5" path="res://assets/Textures/Facade001_4K-JPG/Facade001_4K_NormalGL.jpg" id="3_0aokh"]
+[ext_resource type="Texture2D" uid="uid://dxqi4dqfd6bxn" path="res://assets/Textures/Facade001_4K-JPG/Facade001_4K_Roughness.jpg" id="4_n6rgm"]
+
+[resource]
+albedo_texture = ExtResource("1_dnqcc")
+metallic = 0.75
+metallic_texture = ExtResource("2_yxsgq")
+roughness_texture = ExtResource("4_n6rgm")
+normal_enabled = true
+normal_texture = ExtResource("3_0aokh")
+uv1_scale = Vector3(0.1, 0.1, 0.1)
+uv1_triplanar = true

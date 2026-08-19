@@ -1,0 +1,88 @@
+[gd_scene load_steps=13 format=3 uid="uid://dm73ymoa3eor2"]
+
+[ext_resource type="Material" uid="uid://j6ba1b8swx26" path="res://assets/Textures/Materials/Facade006.tres" id="4_tb2s6"]
+[ext_resource type="Material" uid="uid://bt7cpyl7704dl" path="res://assets/Textures/Materials/Side_Walk.tres" id="5_bmd68"]
+[ext_resource type="Material" uid="uid://eivyh5o3363i" path="res://assets/Textures/Materials/Concrete.tres" id="6_w6okc"]
+[ext_resource type="Material" uid="uid://d2c4xg45wp84b" path="res://assets/Textures/Materials/Facade001.tres" id="7_q065y"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_w6okc"]
+lightmap_size_hint = Vector2i(354, 331)
+add_uv2 = true
+size = Vector3(35, 15, 35)
+
+[sub_resource type="BoxMesh" id="BoxMesh_q065y"]
+lightmap_size_hint = Vector2i(359, 188)
+add_uv2 = true
+size = Vector3(35.5, 0.5, 35.5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ks26g"]
+lightmap_size_hint = Vector2i(304, 186)
+add_uv2 = true
+size = Vector3(30, 3, 30)
+
+[sub_resource type="BoxMesh" id="BoxMesh_5eqre"]
+lightmap_size_hint = Vector2i(309, 163)
+add_uv2 = true
+size = Vector3(30.5, 0.5, 30.5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_hf1ni"]
+lightmap_size_hint = Vector2i(204, 171)
+add_uv2 = true
+size = Vector3(20, 6.5, 20)
+
+[sub_resource type="BoxMesh" id="BoxMesh_jfk5u"]
+lightmap_size_hint = Vector2i(214, 116)
+add_uv2 = true
+size = Vector3(21, 0.5, 21)
+
+[sub_resource type="BoxMesh" id="BoxMesh_myuon"]
+lightmap_size_hint = Vector2i(214, 491)
+add_uv2 = true
+size = Vector3(21, 38, 21)
+
+[sub_resource type="BoxMesh" id="BoxMesh_lmafh"]
+lightmap_size_hint = Vector2i(219, 118)
+add_uv2 = true
+size = Vector3(21.5, 0.5, 21.5)
+
+[node name="HK Building 2" type="Node3D"]
+
+[node name="BaseWide" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.5, 0)
+material_override = ExtResource("4_tb2s6")
+mesh = SubResource("BoxMesh_w6okc")
+
+[node name="BaseSplit" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 15.25, 0)
+material_override = ExtResource("5_bmd68")
+mesh = SubResource("BoxMesh_q065y")
+
+[node name="BaseSmall" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 16.75, 0)
+material_override = ExtResource("4_tb2s6")
+mesh = SubResource("BoxMesh_ks26g")
+
+[node name="BaseTop" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 18.5, 0)
+material_override = ExtResource("6_w6okc")
+mesh = SubResource("BoxMesh_5eqre")
+
+[node name="Split" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 22, 0)
+material_override = ExtResource("5_bmd68")
+mesh = SubResource("BoxMesh_hf1ni")
+
+[node name="SplitTop" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 25.5, 0)
+material_override = ExtResource("6_w6okc")
+mesh = SubResource("BoxMesh_jfk5u")
+
+[node name="Top" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 44.75, 0)
+material_override = ExtResource("7_q065y")
+mesh = SubResource("BoxMesh_myuon")
+
+[node name="Roof" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 64, 0)
+material_override = ExtResource("6_w6okc")
+mesh = SubResource("BoxMesh_lmafh")

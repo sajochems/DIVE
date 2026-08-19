@@ -1,0 +1,349 @@
+[gd_scene load_steps=29 format=3 uid="uid://pr378kjwfiur"]
+
+[ext_resource type="PackedScene" uid="uid://dda5s8dwkpfb8" path="res://scenes/roads/straight_road.tscn" id="1_lmusd"]
+[ext_resource type="PackedScene" uid="uid://cg7x8py5sjxjd" path="res://scenes/roads/four_way_crossing.tscn" id="2_t0sr2"]
+[ext_resource type="PackedScene" uid="uid://deua4dt1ucide" path="res://scenes/roads/t_crossing.tscn" id="3_pv1ep"]
+[ext_resource type="PackedScene" uid="uid://b76dnhf0fcckn" path="res://scenes/roads/turn.tscn" id="4_krs0c"]
+[ext_resource type="PackedScene" uid="uid://eug8i42frisw" path="res://scenes/roads/half_t_crossing.tscn" id="5_tgxd0"]
+[ext_resource type="PackedScene" uid="uid://b68yh0x2ibwm8" path="res://scenes/roads/half_turn_left.tscn" id="6_4r2hl"]
+[ext_resource type="PackedScene" uid="uid://bbw8m82jxoacb" path="res://scenes/roads/half_turn_right.tscn" id="7_qrg1y"]
+[ext_resource type="PackedScene" uid="uid://br5c7scbvui6h" path="res://scenes/roads/half_road.tscn" id="8_w8nay"]
+[ext_resource type="PackedScene" uid="uid://batd5kf6ytxjs" path="res://scenes/buildings/hk_building_4.tscn" id="9_r2cxc"]
+[ext_resource type="PackedScene" uid="uid://0xobjsx1yhij" path="res://scenes/buildings/hk_building_1.tscn" id="10_fnscv"]
+[ext_resource type="PackedScene" uid="uid://dm73ymoa3eor2" path="res://scenes/buildings/hk_building_2.tscn" id="11_flcn8"]
+[ext_resource type="PackedScene" uid="uid://70uus25gbiys" path="res://scenes/buildings/hk_building_3.tscn" id="12_eodxk"]
+[ext_resource type="PackedScene" uid="uid://dw3evtvcwvm3t" path="res://scenes/buildings/office_building_short.tscn" id="13_dwsaf"]
+[ext_resource type="PackedScene" uid="uid://ccx3c8q0yv1b4" path="res://scenes/buildings/office_building_tall.tscn" id="14_ogu4x"]
+[ext_resource type="PackedScene" uid="uid://c74lxkr0w08ef" path="res://scenes/buildings/regular_building.tscn" id="15_os3y0"]
+[ext_resource type="PackedScene" uid="uid://cgil3r0inmlmc" path="res://scenes/buildings/regular_tall_building.tscn" id="16_icfaj"]
+[ext_resource type="PackedScene" uid="uid://bkh3ek7wf4d36" path="res://scenes/plants/tree_01.tscn" id="17_6grsa"]
+[ext_resource type="Material" uid="uid://bc6blquo7hsep" path="res://assets/Textures/Materials/Grass002.tres" id="18_pww3w"]
+[ext_resource type="PackedScene" uid="uid://qlhsgs2s44hy" path="res://addons/ParkFurnitures/scenes/Park_Furniture/park_furn_bench_a.tscn" id="19_ijd5o"]
+[ext_resource type="PackedScene" uid="uid://cwfcaf0cmeis4" path="res://addons/ParkFurnitures/scenes/Park_Furniture/park_furn_trash_can_b.tscn" id="20_c6oeb"]
+[ext_resource type="PackedScene" uid="uid://bjsfbg6ddy55g" path="res://addons/ParkFurnitures/scenes/Park_Furniture/park_furn_umbrella_e.tscn" id="21_f1ffw"]
+[ext_resource type="PackedScene" uid="uid://cxrpevvub7q1i" path="res://addons/ParkFurnitures/scenes/Park_Furniture/park_furn_table_a.tscn" id="22_rvhhm"]
+[ext_resource type="PackedScene" uid="uid://dis66f5r7qi50" path="res://addons/ParkFurnitures/scenes/Park_Furniture/park_furn_umbrella_i.tscn" id="23_potra"]
+[ext_resource type="PackedScene" uid="uid://6rmw4k1y8wf2" path="res://addons/ParkFurnitures/scenes/Park_Furniture/park_furn_lamp_a.tscn" id="24_mca7m"]
+[ext_resource type="PackedScene" uid="uid://cmdygm7fls3k3" path="res://scenes/h_terrain.tscn" id="25_8usap"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_fwi55"]
+lightmap_size_hint = Vector2i(86, 96)
+add_uv2 = true
+size = Vector3(16, 1, 0.5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_na085"]
+lightmap_size_hint = Vector2i(106, 116)
+add_uv2 = true
+size = Vector3(20, 1, 0.5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_666fw"]
+lightmap_size_hint = Vector2i(180, 189)
+add_uv2 = true
+size = Vector3(34.725, 1, 0.5)
+
+[node name="CityWorld" type="Node3D"]
+
+[node name="Roads" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
+
+[node name="StraightRoad" parent="Roads" instance=ExtResource("1_lmusd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.33, 0, 33.834)
+ROADLENGTH = 23.0
+
+[node name="StraightRoad3" parent="Roads" instance=ExtResource("1_lmusd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -49.418, 0, 32.303)
+
+[node name="FourWayCrossing" parent="Roads" instance=ExtResource("2_t0sr2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -49.418, 0, 67.673)
+
+[node name="FourWayCrossing2" parent="Roads" instance=ExtResource("2_t0sr2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.33, 0, 67.673)
+
+[node name="StraightRoad5" parent="Roads" instance=ExtResource("1_lmusd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -49.418, 0, 43.821)
+ROADLENGTH = 3.1
+
+[node name="StraightRoad6" parent="Roads" instance=ExtResource("1_lmusd")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -17.059, 0, 67.673)
+ROADLENGTH = 20.1
+
+[node name="FourWayCrossing3" parent="Roads" instance=ExtResource("2_t0sr2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60.024, 0, 67.673)
+
+[node name="StraightRoad7" parent="Roads" instance=ExtResource("1_lmusd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60.024, 0, 33.818)
+ROADLENGTH = 23.02
+
+[node name="TCrossing3" parent="Roads" instance=ExtResource("3_pv1ep")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -97.049, 0, 67.673)
+
+[node name="StraightRoad8" parent="Roads" instance=ExtResource("1_lmusd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -97.049, 0, 33.878)
+ROADLENGTH = 23.2
+
+[node name="StraightRoad9" parent="Roads" instance=ExtResource("1_lmusd")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -73.238, 0, 67.673)
+ROADLENGTH = 3.0
+
+[node name="Turn3" parent="Roads" instance=ExtResource("4_krs0c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 97.049, 0, 67.673)
+
+[node name="StraightRoad10" parent="Roads" instance=ExtResource("1_lmusd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 97.049, 0, 33.835)
+ROADLENGTH = 23.0
+
+[node name="Turn4" parent="Roads" instance=ExtResource("4_krs0c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60.024, 0, 112.179)
+
+[node name="TCrossing5" parent="Roads" instance=ExtResource("3_pv1ep")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 15.33, 0, 112.179)
+
+[node name="TCrossing6" parent="Roads" instance=ExtResource("3_pv1ep")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -49.418, 0, 112.179)
+
+[node name="Turn5" parent="Roads" instance=ExtResource("4_krs0c")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -141.686, 0, 67.673)
+
+[node name="Turn6" parent="Roads" instance=ExtResource("4_krs0c")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -141.686, 0, 112.179)
+
+[node name="StraightRoad11" parent="Roads" instance=ExtResource("1_lmusd")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -95.8546, 0, 112.179)
+ROADLENGTH = 50.0
+
+[node name="StraightRoad12" parent="Roads" instance=ExtResource("1_lmusd")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -17.1145, 0, 112.179)
+ROADLENGTH = 21.0
+
+[node name="HalfTCrossing" parent="Roads" instance=ExtResource("5_tgxd0")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 15.33, 0, 0)
+
+[node name="HalfTCrossing2" parent="Roads" instance=ExtResource("5_tgxd0")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -49.418, 0, 0)
+
+[node name="HalfTurnLeft" parent="Roads" instance=ExtResource("6_4r2hl")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -97.049, 0, 0)
+
+[node name="HalfTCrossing3" parent="Roads" instance=ExtResource("5_tgxd0")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 60.024, 0, 0)
+
+[node name="HalfTurnRight" parent="Roads" instance=ExtResource("7_qrg1y")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 97.049, 0, 0)
+
+[node name="HalfRoad" parent="Roads" instance=ExtResource("8_w8nay")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -17.032, 0, 0)
+ROADLENGTH = 20.1
+
+[node name="HalfRoad2" parent="Roads" instance=ExtResource("8_w8nay")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -73.263, 0, 0)
+ROADLENGTH = 3.0
+
+[node name="Buildings" type="Node3D" parent="."]
+
+[node name="HK Building 4" parent="Buildings" instance=ExtResource("9_r2cxc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -81.6, 0, 15.445)
+
+[node name="HK Building 7" parent="Buildings" instance=ExtResource("9_r2cxc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 93.231, 0, 83.8269)
+
+[node name="HK Building 1" parent="Buildings" instance=ExtResource("10_fnscv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 108.603, 0, 0.012)
+
+[node name="HK Building 1 copy" parent="Buildings" instance=ExtResource("10_fnscv")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -108.603, 0, 0.012)
+
+[node name="HK Building 2" parent="Buildings" instance=ExtResource("11_flcn8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37.671, 0, 45.2539)
+
+[node name="HK Building 5" parent="Buildings" instance=ExtResource("11_flcn8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -119.533, 0, 89.8975)
+
+[node name="HK Building 3" parent="Buildings" instance=ExtResource("12_eodxk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -75.181, -0.195, 50.979)
+
+[node name="HK Building 6" parent="Buildings" instance=ExtResource("12_eodxk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 113.874, -0.195, 58.8761)
+
+[node name="HK Building 8" parent="Buildings" instance=ExtResource("12_eodxk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 76.9431, 0, 16.963)
+
+[node name="Office Building Short" parent="Buildings" instance=ExtResource("13_dwsaf")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -61.6045, 0, 20.1405)
+
+[node name="SpawnBuilding" parent="Buildings" instance=ExtResource("14_ogu4x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 17.985)
+visible = false
+
+[node name="Regular Building" parent="Buildings" instance=ExtResource("15_os3y0")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -28.746, 0, 13.5156)
+
+[node name="Regular Building3" parent="Buildings" instance=ExtResource("15_os3y0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 73.2546, 0, 46.46)
+
+[node name="Regular Building4" parent="Buildings" instance=ExtResource("15_os3y0")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -70.5682, 0, 81.0185)
+
+[node name="Regular Tall Building3" parent="Buildings" instance=ExtResource("16_icfaj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -107.996, 0, 52.2931)
+
+[node name="Regular Tall Building2" parent="Buildings" instance=ExtResource("16_icfaj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 125.377, 0, 29.9872)
+
+[node name="Park" type="Node3D" parent="."]
+
+[node name="Nature" type="Node3D" parent="Park"]
+
+[node name="tree_01" parent="Park/Nature" instance=ExtResource("17_6grsa")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 33.2394, 0, 11.4569)
+
+[node name="tree_04" parent="Park/Nature" instance=ExtResource("17_6grsa")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 27.3263, 0, 20.9684)
+
+[node name="tree_08" parent="Park/Nature" instance=ExtResource("17_6grsa")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 40.6444, 0, 19.1358)
+
+[node name="tree_09" parent="Park/Nature" instance=ExtResource("17_6grsa")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 33.693, 0, 19.9539)
+
+[node name="tree_06" parent="Park/Nature" instance=ExtResource("17_6grsa")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 45.2669, 0, 19.6176)
+
+[node name="tree_07" parent="Park/Nature" instance=ExtResource("17_6grsa")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 47.8966, 0, 15.3916)
+
+[node name="tree_05" parent="Park/Nature" instance=ExtResource("17_6grsa")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 24.7918, 0, 6.3236)
+
+[node name="tree_02" parent="Park/Nature" instance=ExtResource("17_6grsa")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 43.8995, 0, 12.8368)
+
+[node name="tree_03" parent="Park/Nature" instance=ExtResource("17_6grsa")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 40.6925, 0, 9.61921)
+
+[node name="tree_10" parent="Park/Nature" instance=ExtResource("17_6grsa")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 48.0568, 0, 9.61921)
+
+[node name="Hedge" type="MeshInstance3D" parent="Park/Nature"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 47.5, 0.5, 4.75)
+material_override = ExtResource("18_pww3w")
+mesh = SubResource("BoxMesh_fwi55")
+skeleton = NodePath("../..")
+
+[node name="Hedge2" type="MeshInstance3D" parent="Park/Nature"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.7692, 0.5, 4.75)
+material_override = ExtResource("18_pww3w")
+mesh = SubResource("BoxMesh_fwi55")
+skeleton = NodePath("../..")
+
+[node name="LongHedge" type="MeshInstance3D" parent="Park/Nature"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 55.25, 0.5, 15)
+material_override = ExtResource("18_pww3w")
+mesh = SubResource("BoxMesh_na085")
+skeleton = NodePath("../..")
+
+[node name="LongHedge2" type="MeshInstance3D" parent="Park/Nature"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 20.025, 0.5, 15)
+material_override = ExtResource("18_pww3w")
+mesh = SubResource("BoxMesh_na085")
+skeleton = NodePath("../..")
+
+[node name="BackHedge" type="MeshInstance3D" parent="Park/Nature"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37.64, 0.5, 24.75)
+material_override = ExtResource("18_pww3w")
+mesh = SubResource("BoxMesh_666fw")
+skeleton = NodePath("../..")
+
+[node name="BackHedge2" type="MeshInstance3D" parent="Park/Nature"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 2.02836, 0.5, 22.616)
+material_override = ExtResource("18_pww3w")
+mesh = SubResource("BoxMesh_666fw")
+skeleton = NodePath("../..")
+
+[node name="BackHedge3" type="MeshInstance3D" parent="Park/Nature"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -3.01017, 0.5, 22.616)
+material_override = ExtResource("18_pww3w")
+mesh = SubResource("BoxMesh_666fw")
+skeleton = NodePath("../..")
+
+[node name="Furniture" type="Node3D" parent="Park"]
+
+[node name="ParkFurn_Bench_A" parent="Park/Furniture" instance=ExtResource("19_ijd5o")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 35.668, 0, 7.691)
+
+[node name="ParkFurn_Bench_A3" parent="Park/Furniture" instance=ExtResource("19_ijd5o")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 35.668, 0, 13.591)
+
+[node name="ParkFurn_Bench_A2" parent="Park/Furniture" instance=ExtResource("19_ijd5o")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 39.3347, 0, 10.6751)
+
+[node name="ParkFurn_TrashCan_B" parent="Park/Furniture" instance=ExtResource("20_c6oeb")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 39.335, -0.001, 12.022)
+
+[node name="ParkFurn_TrashCan_B4" parent="Park/Furniture" instance=ExtResource("20_c6oeb")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 27.5293, -0.001, 11.4518)
+
+[node name="ParkFurn_TrashCan_B2" parent="Park/Furniture" instance=ExtResource("20_c6oeb")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 35.668, -0.001, 6.328)
+
+[node name="ParkFurn_TrashCan_B3" parent="Park/Furniture" instance=ExtResource("20_c6oeb")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 35.668, -0.001, 12.2618)
+
+[node name="ParkFurn_Umbrella_E" parent="Park/Furniture" instance=ExtResource("21_f1ffw")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 27.5293, 0, 13.01)
+
+[node name="ParkFurn_Umbrella_E3" parent="Park/Furniture" instance=ExtResource("21_f1ffw")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 25.0003, 0, 13.01)
+
+[node name="ParkFurn_Umbrella_E2" parent="Park/Furniture" instance=ExtResource("21_f1ffw")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 27.5293, 0, 9.963)
+
+[node name="ParkFurn_Table_A" parent="Park/Furniture" instance=ExtResource("22_rvhhm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.3041, 0, 12.991)
+
+[node name="ParkFurn_Table_A3" parent="Park/Furniture" instance=ExtResource("22_rvhhm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.3041, 0, 9.96322)
+
+[node name="ParkFurn_Table_A4" parent="Park/Furniture" instance=ExtResource("22_rvhhm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.8323, 0, 9.963)
+
+[node name="ParkFurn_Table_A2" parent="Park/Furniture" instance=ExtResource("22_rvhhm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.832, 0, 12.991)
+
+[node name="ParkFurn_Umbrella_I" parent="Park/Furniture" instance=ExtResource("23_potra")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 30.0873, 0, 9.963)
+
+[node name="ParkFurn_Umbrella_I3" parent="Park/Furniture" instance=ExtResource("23_potra")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 30.0873, 0, 13.01)
+
+[node name="ParkFurn_Umbrella_I2" parent="Park/Furniture" instance=ExtResource("23_potra")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 25.0003, 0, 9.963)
+
+[node name="ParkFurn_Lamp_A" parent="Park/Furniture" instance=ExtResource("24_mca7m")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 25.007, 0.044, 7.98595)
+
+[node name="ParkFurn_Lamp_A8" parent="Park/Furniture" instance=ExtResource("24_mca7m")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 30.0187, 0.044, 7.98595)
+
+[node name="ParkFurn_Lamp_A2" parent="Park/Furniture" instance=ExtResource("24_mca7m")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 25.007, 0.044, 11.4239)
+
+[node name="ParkFurn_Lamp_A7" parent="Park/Furniture" instance=ExtResource("24_mca7m")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 30.0543, 0.044, 11.4374)
+
+[node name="ParkFurn_Lamp_A3" parent="Park/Furniture" instance=ExtResource("24_mca7m")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 25.007, 0.044, 14.9733)
+
+[node name="ParkFurn_Lamp_A6" parent="Park/Furniture" instance=ExtResource("24_mca7m")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 30.0442, 0.044, 14.9733)
+
+[node name="ParkFurn_Lamp_A4" parent="Park/Furniture" instance=ExtResource("24_mca7m")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 25.007, 0.044, 18.9772)
+
+[node name="ParkFurn_Lamp_A5" parent="Park/Furniture" instance=ExtResource("24_mca7m")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 30.0674, 0.044, 18.9772)
+
+[node name="Terrain" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.4, 128.25)
+
+[node name="HTerrain" parent="Terrain" instance=ExtResource("25_8usap")]
+shader_params/u_triplanar = true

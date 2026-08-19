@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://u13fmm6i33dy"]
+
+[ext_resource type="Script" uid="uid://dpnyqrlkrpmsj" path="res://scripts/objects/platform.gd" id="1_1snvm"]
+[ext_resource type="Material" uid="uid://bt7cpyl7704dl" path="res://assets/Textures/Materials/Side_Walk.tres" id="2_ybwss"]
+[ext_resource type="PackedScene" uid="uid://bk3xeyi2lmr4i" path="res://scenes/objects/Fence.tscn" id="3_hm6q1"]
+[ext_resource type="PackedScene" uid="uid://m4irefscpwk1" path="res://scenes/objects/elevator_door.tscn" id="4_krwlf"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_mlqre"]
+material = ExtResource("2_ybwss")
+size = Vector3(2.5, 1, 1.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_kul6x"]
+size = Vector3(2.5, 1, 5)
+
+[node name="CityPlatform" type="Node3D" unique_id=1848815070]
+script = ExtResource("1_1snvm")
+PLATFORMLENGTH = 0.75
+HEIGHTOFFSET = 1.0
+
+[node name="ElevatorDoor" parent="." unique_id=719769417 instance=ExtResource("4_krwlf")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0.5, 0.577526)
+
+[node name="Scalable" type="Node3D" parent="." unique_id=1087542521]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Scalable" unique_id=1756460349]
+mesh = SubResource("BoxMesh_mlqre")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Scalable/MeshInstance3D" unique_id=267523750]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Scalable/MeshInstance3D/StaticBody3D" unique_id=78695641]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.7501011)
+shape = SubResource("BoxShape3D_kul6x")
+
+[node name="Fence" parent="Scalable" unique_id=1487977446 instance=ExtResource("3_hm6q1")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.17499, 0.5, 0)
+
+[node name="Fence2" parent="Scalable" unique_id=1774531245 instance=ExtResource("3_hm6q1")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1.175, 0.5, 0)

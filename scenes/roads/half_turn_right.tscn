@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://bbw8m82jxoacb"]
+
+[ext_resource type="PackedScene" uid="uid://br5c7scbvui6h" path="res://scenes/roads/half_road.tscn" id="1_iep4c"]
+[ext_resource type="PackedScene" uid="uid://dda5s8dwkpfb8" path="res://scenes/roads/straight_road.tscn" id="2_olcg2"]
+[ext_resource type="Material" uid="uid://bt7cpyl7704dl" path="res://assets/Textures/Materials/Side_Walk.tres" id="3_1v3pp"]
+[ext_resource type="Material" uid="uid://ggr6q4i65cl7" path="res://assets/Textures/Materials/Simple_Ashphalt.tres" id="4_cj58j"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_nabg2"]
+lightmap_size_hint = Vector2i(25, 17)
+material = ExtResource("3_1v3pp")
+add_uv2 = true
+size = Vector3(2.35, 0.01, 2)
+
+[sub_resource type="BoxMesh" id="BoxMesh_17xpi"]
+lightmap_size_hint = Vector2i(39, 29)
+add_uv2 = true
+size = Vector3(2.35, 0, 4.7)
+
+[node name="HalfTurnRight" type="Node3D" unique_id=1896655629]
+
+[node name="HalfRoad" parent="." unique_id=2029203432 instance=ExtResource("1_iep4c")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, -12.35)
+
+[node name="StraightRoad2" parent="." unique_id=1319688888 instance=ExtResource("2_olcg2")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -12.35, 0.011, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=29798848]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.184, 0.011, 3.35)
+mesh = SubResource("BoxMesh_nabg2")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=1081706958]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.175, 0, 0)
+material_override = ExtResource("4_cj58j")
+mesh = SubResource("BoxMesh_17xpi")

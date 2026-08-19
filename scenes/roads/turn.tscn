@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://b76dnhf0fcckn"]
+
+[ext_resource type="PackedScene" uid="uid://dda5s8dwkpfb8" path="res://scenes/roads/straight_road.tscn" id="1_7rnit"]
+[ext_resource type="Material" uid="uid://ggr6q4i65cl7" path="res://assets/Textures/Materials/Simple_Ashphalt.tres" id="2_hqxbi"]
+[ext_resource type="Material" uid="uid://bt7cpyl7704dl" path="res://assets/Textures/Materials/Side_Walk.tres" id="3_hqxbi"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_a6xno"]
+lightmap_size_hint = Vector2i(50, 29)
+material = ExtResource("2_hqxbi")
+add_uv2 = true
+size = Vector3(4.7, 0, 4.7)
+
+[sub_resource type="BoxMesh" id="BoxMesh_fcrnx"]
+lightmap_size_hint = Vector2i(37, 29)
+material = ExtResource("3_hqxbi")
+add_uv2 = true
+size = Vector3(4.7, 0.01, 2)
+
+[sub_resource type="BoxMesh" id="BoxMesh_bcwfv"]
+lightmap_size_hint = Vector2i(24, 16)
+material = ExtResource("3_hqxbi")
+add_uv2 = true
+size = Vector3(2, 0.01, 2)
+
+[node name="Turn" type="Node3D" unique_id=354258220]
+
+[node name="StraightRoad" parent="." unique_id=1583894180 instance=ExtResource("1_7rnit")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.011, -12.35)
+
+[node name="StraightRoad2" parent="." unique_id=1248023713 instance=ExtResource("1_7rnit")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -12.35, 0, 0)
+
+[node name="crossing" type="MeshInstance3D" parent="." unique_id=763541923]
+mesh = SubResource("BoxMesh_a6xno")
+
+[node name="SideWalk" type="MeshInstance3D" parent="." unique_id=854615112]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.011, 3.35)
+mesh = SubResource("BoxMesh_fcrnx")
+
+[node name="SideWalk2" type="MeshInstance3D" parent="." unique_id=322969441]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 3.35, 0.011, 0)
+mesh = SubResource("BoxMesh_fcrnx")
+
+[node name="CornerSideWalk" type="MeshInstance3D" parent="." unique_id=1331645222]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.35, 0.011, 3.35)
+mesh = SubResource("BoxMesh_bcwfv")

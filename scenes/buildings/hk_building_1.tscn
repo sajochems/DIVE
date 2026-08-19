@@ -1,0 +1,49 @@
+[gd_scene load_steps=8 format=3 uid="uid://0xobjsx1yhij"]
+
+[ext_resource type="Material" uid="uid://eivyh5o3363i" path="res://assets/Textures/Materials/Concrete.tres" id="6_j7axx"]
+[ext_resource type="Material" uid="uid://d2c4xg45wp84b" path="res://assets/Textures/Materials/Facade001.tres" id="7_efq2q"]
+[ext_resource type="Material" uid="uid://bt7cpyl7704dl" path="res://assets/Textures/Materials/Side_Walk.tres" id="8_efq2q"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_dcxug"]
+lightmap_size_hint = Vector2i(139, 78)
+add_uv2 = true
+size = Vector3(13.5, 0.5, 13.5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_aqiqn"]
+lightmap_size_hint = Vector2i(134, 171)
+add_uv2 = true
+size = Vector3(13, 10, 13)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ck5yl"]
+lightmap_size_hint = Vector2i(154, 881)
+add_uv2 = true
+size = Vector3(15, 80, 15)
+
+[sub_resource type="BoxMesh" id="BoxMesh_l6qsd"]
+lightmap_size_hint = Vector2i(159, 88)
+add_uv2 = true
+size = Vector3(15.5, 0.5, 15.5)
+
+[node name="HK Building 1" type="Node3D"]
+
+[node name="Roof" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 90.5, 0)
+material_override = ExtResource("6_j7axx")
+mesh = SubResource("BoxMesh_dcxug")
+skeleton = NodePath("")
+
+[node name="Top" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 85.5, 0)
+material_override = ExtResource("7_efq2q")
+mesh = SubResource("BoxMesh_aqiqn")
+skeleton = NodePath("../Base")
+
+[node name="Base" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 40, 0)
+material_override = ExtResource("7_efq2q")
+mesh = SubResource("BoxMesh_ck5yl")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 80.25, 0)
+material_override = ExtResource("8_efq2q")
+mesh = SubResource("BoxMesh_l6qsd")

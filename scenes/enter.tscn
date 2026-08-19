@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://cfn002o1d3sk"]
+
+[ext_resource type="Script" uid="uid://2681d5mfdu4n" path="res://scripts/util/scene_loader.gd" id="1_1g4bp"]
+[ext_resource type="PackedScene" uid="uid://dtgoob6m42nd6" path="res://scenes/levels/xr_menu_scene.tscn" id="2_kiq4n"]
+
+[node name="Enter" type="Node3D" unique_id=509536712]
+
+[node name="SceneLoader" type="Node3D" parent="." unique_id=1311174542]
+script = ExtResource("1_1g4bp")
+
+[node name="XRMenuScene" parent="SceneLoader" unique_id=1219809979 instance=ExtResource("2_kiq4n")]

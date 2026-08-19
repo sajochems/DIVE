@@ -1,0 +1,40 @@
+[gd_scene load_steps=6 format=3 uid="uid://do1okf125qdqh"]
+
+[ext_resource type="Script" uid="uid://bq2hsxjftb2h0" path="res://scripts/players/player.gd" id="1_rpqav"]
+[ext_resource type="PackedScene" uid="uid://hfbeo8ywe6f7" path="res://scenes/ui/user_interface.tscn" id="2_kyqiw"]
+[ext_resource type="PackedScene" uid="uid://57bole61ertf" path="res://scenes/players/avatar.tscn" id="3_kc87p"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_qbkls"]
+radius = 0.291167
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_g2els"]
+properties/0/path = NodePath(".:position")
+properties/0/spawn = true
+properties/0/replication_mode = 1
+properties/1/path = NodePath(".:rotation")
+properties/1/spawn = true
+properties/1/replication_mode = 1
+
+[node name="PlayerController" type="CharacterBody3D" node_paths=PackedStringArray("CAMERA_CONTROLLER")]
+script = ExtResource("1_rpqav")
+CAMERA_CONTROLLER = NodePath("CameraController/Camera3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_qbkls")
+
+[node name="CameraController" type="Node3D" parent="."]
+
+[node name="Camera3D" type="Camera3D" parent="CameraController"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.721971, -0.121779)
+
+[node name="UserInterface" parent="." instance=ExtResource("2_kyqiw")]
+offset_left = -17.1895
+offset_top = -12.541
+offset_right = 22.8105
+offset_bottom = 27.459
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
+replication_config = SubResource("SceneReplicationConfig_g2els")
+
+[node name="Avatar" parent="." instance=ExtResource("3_kc87p")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, -1, 0)

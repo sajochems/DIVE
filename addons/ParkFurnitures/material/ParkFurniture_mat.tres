@@ -1,0 +1,30 @@
+[gd_resource type="ShaderMaterial" load_steps=7 format=3 uid="uid://cr44gxyt8wvuc"]
+
+[ext_resource type="Shader" uid="uid://cek16wp6elaav" path="res://addons/ParkFurnitures/material/ORM_Shader_Cull_Back.gdshader" id="1_kde5a"]
+[ext_resource type="Texture2D" uid="uid://r5ld27ig2cr3" path="res://addons/ParkFurnitures/textures/ParkFurnitures/ParkFurnitures_Diffuse_2K.png" id="2_p8a6l"]
+[ext_resource type="Texture2D" uid="uid://bb4rid7bdclu7" path="res://addons/ParkFurnitures/textures/ParkFurnitures/ParkFurnitures_Alpha_1K.png" id="3_hbmtu"]
+[ext_resource type="Texture2D" uid="uid://c01ayhhkkqsm0" path="res://addons/ParkFurnitures/textures/ParkFurnitures/ParkFurnitures_Emission_2K.png" id="4_4q82f"]
+[ext_resource type="Texture2D" uid="uid://da8r2ks7xpgf7" path="res://addons/ParkFurnitures/textures/ParkFurnitures/ParkFurnitures_Normal_2K.png" id="5_nkxve"]
+[ext_resource type="Texture2D" uid="uid://c1pu1usybljde" path="res://addons/ParkFurnitures/textures/ParkFurnitures/ParkFurnitures_ORM_2K.png" id="6_c7fn1"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_kde5a")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/texture_albedo = ExtResource("2_p8a6l")
+shader_parameter/texture_orm = ExtResource("6_c7fn1")
+shader_parameter/texture_alpha = ExtResource("3_hbmtu")
+shader_parameter/alpha_scissor_threshold = 0.13
+shader_parameter/roughness = 1.0
+shader_parameter/specular = 0.5
+shader_parameter/metallic = 0.0
+shader_parameter/texture_normal = ExtResource("5_nkxve")
+shader_parameter/normal_scale = 1.0
+shader_parameter/ao_light_affect = 1.0
+shader_parameter/texture_emission = ExtResource("4_4q82f")
+shader_parameter/emission = Color(1, 1, 1, 1)
+shader_parameter/emission_energy = 5.0
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = Vector3(0, 0, 0)
+shader_parameter/uv2_scale = Vector3(0, 0, 0)
+shader_parameter/uv2_offset = Vector3(0, 0, 0)

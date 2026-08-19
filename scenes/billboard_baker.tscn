@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://dg5fcy7eg1eem"]
+
+[ext_resource type="Script" uid="uid://cxy84qlejl2qb" path="res://scripts/util/billboard_baker.gd" id="1_m77mh"]
+[ext_resource type="PackedScene" uid="uid://nn8jorkwm5ue" path="res://scenes/world_environment.tscn" id="2_xhi3u"]
+[ext_resource type="PackedScene" uid="uid://cxrpevvub7q1i" path="res://addons/ParkFurnitures/scenes/Park_Furniture/park_furn_table_a.tscn" id="3_m77mh"]
+
+[node name="BillboardBaker" type="Node3D"]
+script = ExtResource("1_m77mh")
+target_node_path = NodePath("SubViewport/ParkFurn_Table_A")
+camera_path = NodePath("SubViewport/Camera3D")
+viewport_path = NodePath("SubViewport")
+
+[node name="SubViewport" type="SubViewport" parent="."]
+transparent_bg = true
+size = Vector2i(1024, 1024)
+render_target_update_mode = 4
+
+[node name="Camera3D" type="Camera3D" parent="SubViewport"]
+transform = Transform3D(45, 0, 0, 0, 11.6469, 43.4667, 0, -43.4667, 11.6469, 0, 22.5, 8)
+fov = 50.0
+
+[node name="WorldEnvironment" parent="SubViewport" instance=ExtResource("2_xhi3u")]
+
+[node name="ParkFurn_Table_A" parent="SubViewport" instance=ExtResource("3_m77mh")]

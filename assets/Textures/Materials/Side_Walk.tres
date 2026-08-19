@@ -1,0 +1,16 @@
+[gd_resource type="StandardMaterial3D" load_steps=5 format=3 uid="uid://bt7cpyl7704dl"]
+
+[ext_resource type="Texture2D" uid="uid://dqwh2atrrrnxh" path="res://assets/Textures/Walkway6/4K-walkway_6-diffuse.jpg" id="1_pic07"]
+[ext_resource type="Texture2D" uid="uid://bspkkibhhjknv" path="res://assets/Textures/Walkway6/4K-walkway_6-ao.jpg" id="2_gy25t"]
+[ext_resource type="Texture2D" uid="uid://bn1suhcwwaak5" path="res://assets/Textures/Walkway6/4K-walkway_6-specular.jpg" id="3_rm103"]
+[ext_resource type="Texture2D" uid="uid://cl8foyr8a8iw5" path="res://assets/Textures/Walkway6/4K-walkway_6-normal.jpg" id="4_8rwqc"]
+
+[resource]
+albedo_texture = ExtResource("1_pic07")
+metallic = 1.0
+metallic_texture = ExtResource("3_rm103")
+normal_enabled = true
+normal_texture = ExtResource("4_8rwqc")
+ao_enabled = true
+ao_texture = ExtResource("2_gy25t")
+uv1_triplanar = true

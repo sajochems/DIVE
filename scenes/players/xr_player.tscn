@@ -1,0 +1,201 @@
+[gd_scene format=3 uid="uid://dw756ee85lmdm"]
+
+[ext_resource type="Script" uid="uid://dku2mqp5q3pc" path="res://scripts/players/xr_player.gd" id="1_1y06s"]
+[ext_resource type="PackedScene" uid="uid://hfbeo8ywe6f7" path="res://scenes/ui/user_interface.tscn" id="2_u6iyo"]
+[ext_resource type="PackedScene" uid="uid://btknduttnmoxf" path="res://addons/godot-xr-tools/misc/vr_common_shader_cache.tscn" id="3_x3xvd"]
+[ext_resource type="PackedScene" uid="uid://bq86r4yll8po" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/left_fullglove_low.tscn" id="4_8t523"]
+[ext_resource type="Shader" uid="uid://b5tp6jlb850ih" path="res://shaders/impact_flash.gdshader" id="4_ljxhy"]
+[ext_resource type="PackedScene" uid="uid://xqimcf20s2jp" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/right_fullglove_low.tscn" id="5_q15wa"]
+[ext_resource type="Texture2D" uid="uid://cbinj1wai14fh" path="res://addons/volumetric_fog_quad_mesh_texture.webp" id="5_w7cdr"]
+[ext_resource type="PackedScene" uid="uid://cqhw276realc" path="res://addons/godot-xr-tools/functions/function_pointer.tscn" id="6_awktg"]
+[ext_resource type="Script" uid="uid://dc2p44oq5f72v" path="res://scripts/interaction/interactor.gd" id="9_3xcer"]
+[ext_resource type="Script" uid="uid://dhhes0g7im7jf" path="res://addons/godot-xr-tools/player/player_body.gd" id="9_crmio"]
+[ext_resource type="PackedScene" uid="uid://ba32cxusts5c3" path="res://scenes/interaction/firework.tscn" id="10_3a887"]
+[ext_resource type="PackedScene" uid="uid://57bole61ertf" path="res://scenes/players/avatar.tscn" id="10_crmio"]
+[ext_resource type="Script" uid="uid://ddjg4ag40nyl0" path="res://scripts/util/custom_gravity_provider.gd" id="10_whrkk"]
+[ext_resource type="PackedScene" uid="uid://c5jdaab8d0i7j" path="res://scenes/ui/menu/menu_controller.tscn" id="11_fc3tm"]
+[ext_resource type="PackedScene" uid="uid://dqegkg8hnu630" path="res://scenes/interaction/fuse.tscn" id="13_u5g4v"]
+[ext_resource type="Script" uid="uid://de5y5o8w0vor1" path="res://scripts/util/debug_roomscale.gd" id="16_3a887"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_ljxhy"]
+viewport_path = NodePath("XROrigin3D/XRCamera3D/UIPanel/SubViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0x1ja"]
+resource_local_to_scene = true
+transparency = 1
+shading_mode = 0
+albedo_texture = SubResource("ViewportTexture_ljxhy")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_mkiug"]
+size = Vector2(2.5, 2.5)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_w7cdr"]
+render_priority = 0
+shader = ExtResource("4_ljxhy")
+shader_parameter/intensity = 0.0
+shader_parameter/flash_color = Color(1, 0, 0, 1)
+
+[sub_resource type="QuadMesh" id="QuadMesh_ljxhy"]
+size = Vector2(2, 2)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3xcer"]
+shading_mode = 0
+albedo_texture = ExtResource("5_w7cdr")
+distance_fade_mode = 1
+distance_fade_max_distance = 0.0
+
+[sub_resource type="QuadMesh" id="QuadMesh_4y3st"]
+material = SubResource("StandardMaterial3D_3xcer")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w7cdr"]
+shading_mode = 0
+albedo_color = Color(1, 1, 1, 0.392157)
+albedo_texture = ExtResource("5_w7cdr")
+distance_fade_mode = 1
+distance_fade_max_distance = 0.0
+
+[sub_resource type="QuadMesh" id="QuadMesh_3xcer"]
+material = SubResource("StandardMaterial3D_w7cdr")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4y3st"]
+shading_mode = 0
+albedo_color = Color(1, 1, 1, 0.196078)
+albedo_texture = ExtResource("5_w7cdr")
+distance_fade_mode = 1
+distance_fade_max_distance = 0.0
+
+[sub_resource type="QuadMesh" id="QuadMesh_3a887"]
+material = SubResource("StandardMaterial3D_4y3st")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3a887"]
+shading_mode = 0
+albedo_color = Color(0.733005, 0.733005, 0.733005, 1)
+
+[sub_resource type="QuadMesh" id="QuadMesh_u5g4v"]
+material = SubResource("StandardMaterial3D_3a887")
+size = Vector2(10, 10)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_3xcer"]
+radius = 0.1
+
+[node name="XR_Player" type="Node3D" unique_id=869138361]
+script = ExtResource("1_1y06s")
+
+[node name="XROrigin3D" type="XROrigin3D" parent="." unique_id=2057731269]
+
+[node name="XRCamera3D" type="XRCamera3D" parent="XROrigin3D" unique_id=1973237381]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, 0)
+
+[node name="UIPanel" type="MeshInstance3D" parent="XROrigin3D/XRCamera3D" unique_id=1292808090]
+transform = Transform3D(1, 0, 0, 0, 0.111053, -0.993815, 0, 0.993815, 0.111053, 0, -0.3, -1.5)
+material_override = SubResource("StandardMaterial3D_0x1ja")
+mesh = SubResource("PlaneMesh_mkiug")
+skeleton = NodePath("")
+
+[node name="SubViewport" type="SubViewport" parent="XROrigin3D/XRCamera3D/UIPanel" unique_id=449995108]
+transparent_bg = true
+size = Vector2i(1024, 1024)
+
+[node name="UserInterface" parent="XROrigin3D/XRCamera3D/UIPanel/SubViewport" unique_id=211979742 instance=ExtResource("2_u6iyo")]
+
+[node name="VRCommonShaderCache" parent="XROrigin3D/XRCamera3D" unique_id=2625840 instance=ExtResource("3_x3xvd")]
+
+[node name="ImpactFlashMesh" type="MeshInstance3D" parent="XROrigin3D/XRCamera3D" unique_id=149935864]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.15)
+material_override = SubResource("ShaderMaterial_w7cdr")
+mesh = SubResource("QuadMesh_ljxhy")
+
+[node name="FogSphere" type="MeshInstance3D" parent="XROrigin3D/XRCamera3D" unique_id=120007819]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.4)
+mesh = SubResource("QuadMesh_4y3st")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="XROrigin3D/XRCamera3D/FogSphere" unique_id=1347520749]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.15)
+mesh = SubResource("QuadMesh_3xcer")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="XROrigin3D/XRCamera3D/FogSphere/MeshInstance3D" unique_id=694434310]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.15)
+mesh = SubResource("QuadMesh_3a887")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="XROrigin3D/XRCamera3D/FogSphere/MeshInstance3D/MeshInstance3D" unique_id=443230799]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.5)
+mesh = SubResource("QuadMesh_u5g4v")
+
+[node name="LeftHand" type="XRController3D" parent="XROrigin3D" unique_id=1460476657]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, -0.5)
+tracker = &"left_hand"
+
+[node name="LeftHand" parent="XROrigin3D/LeftHand" unique_id=1093217792 instance=ExtResource("4_8t523")]
+
+[node name="FunctionPointer" parent="XROrigin3D/LeftHand" unique_id=1908476548 instance=ExtResource("6_awktg")]
+show_laser = 2
+laser_length = 1
+
+[node name="Area3D" type="Area3D" parent="XROrigin3D/LeftHand" unique_id=274326739]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0148883, -0.0546535, 0.0881752)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="XROrigin3D/LeftHand/Area3D" unique_id=1842195792]
+shape = SubResource("SphereShape3D_3xcer")
+
+[node name="Interactor" type="Node" parent="XROrigin3D/LeftHand" unique_id=277102345 node_paths=PackedStringArray("area") groups=["interaction_hand"]]
+script = ExtResource("9_3xcer")
+area = NodePath("../Area3D")
+metadata/_custom_type_script = "uid://dc2p44oq5f72v"
+
+[node name="RightHand" type="XRController3D" parent="XROrigin3D" unique_id=639349119]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, -0.5)
+tracker = &"right_hand"
+
+[node name="RightHand" parent="XROrigin3D/RightHand" unique_id=495255458 instance=ExtResource("5_q15wa")]
+
+[node name="FunctionPointer" parent="XROrigin3D/RightHand" unique_id=542613134 instance=ExtResource("6_awktg")]
+show_laser = 2
+laser_length = 1
+
+[node name="Area3D" type="Area3D" parent="XROrigin3D/RightHand" unique_id=1321034062]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.015, -0.055, 0.088)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="XROrigin3D/RightHand/Area3D" unique_id=1290153502]
+shape = SubResource("SphereShape3D_3xcer")
+
+[node name="Interactor" type="Node" parent="XROrigin3D/RightHand" unique_id=2082394538 node_paths=PackedStringArray("area") groups=["interaction_hand"]]
+script = ExtResource("9_3xcer")
+area = NodePath("../Area3D")
+metadata/_custom_type_script = "uid://dc2p44oq5f72v"
+
+[node name="Fuse" parent="XROrigin3D/RightHand" unique_id=457511823 instance=ExtResource("13_u5g4v")]
+transform = Transform3D(0.952958, 0.279357, -0.117603, 0, 0.387998, 0.92166, 0.303102, -0.878304, 0.369746, 0.0266892, 0, 0.0539736)
+
+[node name="Firework" parent="XROrigin3D/RightHand" unique_id=344787074 instance=ExtResource("10_3a887")]
+transform = Transform3D(0.98873025, -0.120664686, 0.08861428, 0, 0.5919145, 0.8060007, -0.14970791, -0.79691726, 0.58524376, -0.007999986, 0, 0.02971384)
+
+[node name="PlayerBody" type="CharacterBody3D" parent="XROrigin3D" unique_id=397003781]
+top_level = true
+collision_layer = 2
+collision_mask = 3
+axis_lock_linear_x = true
+axis_lock_linear_z = true
+axis_lock_angular_x = true
+axis_lock_angular_y = true
+axis_lock_angular_z = true
+script = ExtResource("9_crmio")
+push_rigid_bodies = false
+metadata/_custom_type_script = "uid://dhhes0g7im7jf"
+
+[node name="CustomGravityProvider" type="Node3D" parent="XROrigin3D/PlayerBody" unique_id=778102127 groups=["movement_providers"]]
+script = ExtResource("10_whrkk")
+
+[node name="DebugRoomscale" type="Node3D" parent="XROrigin3D" unique_id=2014566447]
+script = ExtResource("16_3a887")
+
+[node name="Avatar" parent="XROrigin3D" unique_id=899847430 instance=ExtResource("10_crmio")]
+
+[node name="Menu" parent="XROrigin3D" unique_id=571003144 instance=ExtResource("11_fc3tm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+
+[connection signal="button_pressed" from="XROrigin3D/LeftHand" to="." method="_on_left_hand_button_pressed"]
+[connection signal="button_released" from="XROrigin3D/LeftHand" to="." method="_on_left_hand_button_released"]
+[connection signal="button_pressed" from="XROrigin3D/RightHand" to="." method="_on_right_hand_button_pressed"]
+[connection signal="button_released" from="XROrigin3D/RightHand" to="." method="_on_right_hand_button_released"]
+
+[editable path="XROrigin3D/XRCamera3D/UIPanel/SubViewport/UserInterface"]

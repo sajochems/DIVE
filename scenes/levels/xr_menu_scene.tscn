@@ -1,0 +1,26 @@
+[gd_scene load_steps=6 format=3 uid="uid://dtgoob6m42nd6"]
+
+[ext_resource type="Script" uid="uid://drx81hmqct1wa" path="res://scripts/ui/menu_player_loader.gd" id="1_ccyct"]
+[ext_resource type="Material" uid="uid://bt7cpyl7704dl" path="res://assets/Textures/Materials/Side_Walk.tres" id="2_ay13p"]
+[ext_resource type="PackedScene" uid="uid://nn8jorkwm5ue" path="res://scenes/world_environment.tscn" id="3_kemj3"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_nnebf"]
+size = Vector3(100, 0.1, 100)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hxg2g"]
+size = Vector3(100, 0.1, 100)
+
+[node name="XRMenuScene" type="Node3D"]
+script = ExtResource("1_ccyct")
+
+[node name="Floor" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+material_override = ExtResource("2_ay13p")
+mesh = SubResource("BoxMesh_nnebf")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Floor"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor/StaticBody3D"]
+shape = SubResource("BoxShape3D_hxg2g")
+
+[node name="WorldEnvironment" parent="." instance=ExtResource("3_kemj3")]

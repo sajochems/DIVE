@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://dda5s8dwkpfb8"]
+
+[ext_resource type="Material" uid="uid://byfx0fqwuyvcd" path="res://assets/Textures/Materials/straight_road.tres" id="1_g6j8s"]
+[ext_resource type="Script" uid="uid://blj4lb4rqlw3p" path="res://scripts/objects/straight_road.gd" id="1_pfbce"]
+[ext_resource type="Material" uid="uid://bt7cpyl7704dl" path="res://assets/Textures/Materials/Side_Walk.tres" id="4_bfvrb"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_qpjdh"]
+lightmap_size_hint = Vector2i(129, 106)
+material = ExtResource("1_g6j8s")
+add_uv2 = true
+size = Vector3(5, 0, 20)
+
+[sub_resource type="BoxMesh" id="BoxMesh_636h7"]
+lightmap_size_hint = Vector2i(114, 106)
+material = ExtResource("4_bfvrb")
+add_uv2 = true
+size = Vector3(2, 0.01, 20)
+
+[sub_resource type="BoxMesh" id="BoxMesh_uau57"]
+lightmap_size_hint = Vector2i(114, 106)
+material = ExtResource("4_bfvrb")
+add_uv2 = true
+size = Vector3(2, 0.01, 20)
+
+[node name="StraightRoad" type="Node3D" unique_id=384481504]
+script = ExtResource("1_pfbce")
+
+[node name="Road" type="MeshInstance3D" parent="." unique_id=995597574]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00359046, 0, 0)
+mesh = SubResource("BoxMesh_qpjdh")
+
+[node name="Sidewalk" type="MeshInstance3D" parent="." unique_id=1658100464]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.35, 0.011, 0)
+mesh = SubResource("BoxMesh_636h7")
+
+[node name="Sidewalk2" type="MeshInstance3D" parent="." unique_id=2086499419]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.35, 0.011, 0)
+mesh = SubResource("BoxMesh_uau57")

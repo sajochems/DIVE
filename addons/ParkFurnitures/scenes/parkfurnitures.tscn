@@ -1,0 +1,223 @@
+[gd_scene load_steps=52 format=3 uid="uid://gtha6jt3ai8"]
+
+[ext_resource type="PackedScene" uid="uid://d0bu8wy0i6o0m" path="res://addons/ParkFurnitures/scenes/Park_Furniture/park_furn_table_b.tscn" id="1_kxr37"]
+[ext_resource type="PackedScene" uid="uid://byvoo8wdc8i1x" path="res://addons/ParkFurnitures/scenes/Park_Furniture/park_furn_table_l.tscn" id="2_6fgph"]
+[ext_resource type="PackedScene" uid="uid://ctlquh7id0lio" path="res://addons/ParkFurnitures/scenes/Park_Furniture/park_furn_table_g.tscn" id="3_2u14w"]
+[ext_resource type="PackedScene" uid="uid://d3jkw8bxo7kiv" path="res://addons/ParkFurnitures/scenes/Park_Furniture/park_furn_table_c.tscn" id="4_lckd2"]
+[ext_resource type="PackedScene" uid="uid://cxrpevvub7q1i" path="res://addons/ParkFurnitures/scenes/Park_Furniture/park_furn_table_a.tscn" id="5_wsec5"]
+[ext_resource type="PackedScene" uid="uid://c440v83eo36qw" path="res://addons/ParkFurnitures/scenes/Park_Furniture/park_furn_table_h.tscn" id="6_qeful"]
+[ext_resource type="PackedScene" uid="uid://dnaq6qkcpt3k5" path="res://addons/ParkFurnitures/scenes/Park_Furniture/park_furn_table_f.tscn" id="7_s782l"]
+[ext_resource type="PackedScene" uid="uid://bjsfbg6ddy55g" path="res://addons/ParkFurnitures/scenes/Park_Furniture/park_furn_umbrella_e.tscn" id="8_m4n41"]
+[ext_resource type="PackedScene" uid="uid://qlhsgs2s44hy" path="res://addons/ParkFurnitures/scenes/Park_Furniture/park_furn_bench_a.tscn" id="9_4nxru"]
+[ext_resource type="PackedScene" uid="uid://uosie337wxvg" path="res://addons/ParkFurnitures/scenes/Park_Furniture/park_furn_bench_b.tscn" id="10_v1ix2"]
+[ext_resource type="PackedScene" uid="uid://dijvguglritn8" path="res://addons/ParkFurnitures/scenes/Park_Furniture/park_furn_trash_can_c.tscn" id="11_8ia3q"]
+[ext_resource type="PackedScene" uid="uid://cwfcaf0cmeis4" path="res://addons/ParkFurnitures/scenes/Park_Furniture/park_furn_trash_can_b.tscn" id="12_7jvi2"]
+[ext_resource type="PackedScene" uid="uid://o0g1cr67yjjb" path="res://addons/ParkFurnitures/scenes/Park_Furniture/park_furn_lamp_b.tscn" id="13_ogsct"]
+[ext_resource type="PackedScene" uid="uid://cqvhfs21i1nn7" path="res://addons/ParkFurnitures/scenes/Park_Furniture/park_furn_trash_can_d.tscn" id="14_375xr"]
+[ext_resource type="PackedScene" uid="uid://nyhpsihp1qq0" path="res://addons/ParkFurnitures/scenes/Park_Furniture/park_furn_trash_can_e.tscn" id="15_lybov"]
+[ext_resource type="PackedScene" uid="uid://cn84br63epf01" path="res://addons/ParkFurnitures/scenes/Park_Furniture/park_furn_trash_can_f.tscn" id="16_jru1c"]
+[ext_resource type="PackedScene" uid="uid://bos886guh2pm6" path="res://addons/ParkFurnitures/scenes/Park_Furniture/park_furn_umbrella_a.tscn" id="17_dah3m"]
+[ext_resource type="PackedScene" uid="uid://dis66f5r7qi50" path="res://addons/ParkFurnitures/scenes/Park_Furniture/park_furn_umbrella_i.tscn" id="18_wtr3w"]
+[ext_resource type="PackedScene" uid="uid://6rmw4k1y8wf2" path="res://addons/ParkFurnitures/scenes/Park_Furniture/park_furn_lamp_a.tscn" id="19_5a316"]
+[ext_resource type="PackedScene" uid="uid://tlewfqxmy0fb" path="res://addons/ParkFurnitures/scenes/Park_Furniture/park_furn_lamp_c.tscn" id="20_p48bp"]
+[ext_resource type="PackedScene" uid="uid://ce454d8ddin4q" path="res://addons/ParkFurnitures/scenes/Park_Furniture/park_furn_umbrella_j.tscn" id="21_ou3eu"]
+[ext_resource type="PackedScene" uid="uid://bqdi6xu46ohks" path="res://addons/ParkFurnitures/scenes/Park_Furniture/park_furn_umbrella_g.tscn" id="22_2wpig"]
+[ext_resource type="PackedScene" uid="uid://8vtph86b3tin" path="res://addons/ParkFurnitures/scenes/Park_Furniture/park_furn_umbrella_c.tscn" id="23_5kp7e"]
+[ext_resource type="PackedScene" uid="uid://bxtnbjxoisqog" path="res://addons/ParkFurnitures/scenes/Park_Furniture/park_furn_umbrella_k.tscn" id="24_2kh7l"]
+[ext_resource type="PackedScene" uid="uid://cri5deay0fvxu" path="res://addons/ParkFurnitures/scenes/Park_Furniture/park_furn_umbrella_l.tscn" id="25_dfn03"]
+[ext_resource type="PackedScene" uid="uid://cxllaxn1j11mh" path="res://addons/ParkFurnitures/scenes/Park_Furniture/park_furn_umbrella_f.tscn" id="26_onei3"]
+[ext_resource type="PackedScene" uid="uid://1658t4qrd8h4" path="res://addons/ParkFurnitures/scenes/Park_Furniture/park_furn_umbrella_b.tscn" id="27_bbrre"]
+[ext_resource type="PackedScene" uid="uid://bj2jnir5bsuwi" path="res://addons/ParkFurnitures/scenes/Park_Furniture/park_furn_umbrella_h.tscn" id="28_iah0g"]
+[ext_resource type="PackedScene" uid="uid://bsokljpm4i4lp" path="res://addons/ParkFurnitures/scenes/Park_Furniture/park_furn_umbrella_d.tscn" id="29_sujjp"]
+[ext_resource type="PackedScene" uid="uid://bqubfhh00s3a5" path="res://addons/ParkFurnitures/scenes/Park_Furniture/park_furn_trash_can_a.tscn" id="30_3sghy"]
+[ext_resource type="PackedScene" uid="uid://c42ytgmn1ol5n" path="res://addons/ParkFurnitures/scenes/Park_Furniture/park_furn_lamp_e.tscn" id="31_6p6ir"]
+[ext_resource type="PackedScene" uid="uid://cvegxl8fqcj2y" path="res://addons/ParkFurnitures/scenes/Park_Furniture/park_furn_lamp_d.tscn" id="32_3jtq4"]
+[ext_resource type="PackedScene" uid="uid://4tsd46ofop6h" path="res://addons/ParkFurnitures/scenes/Park_Furniture/park_furn_arrow_a.tscn" id="33_4v0wd"]
+[ext_resource type="PackedScene" uid="uid://lyqjw5647ai3" path="res://addons/ParkFurnitures/scenes/Park_Furniture/park_furn_arrow_b.tscn" id="34_u6q0b"]
+[ext_resource type="PackedScene" uid="uid://dgfquwaxg0xqd" path="res://addons/ParkFurnitures/scenes/Park_Furniture/park_furn_arrow_c.tscn" id="35_rjrmb"]
+[ext_resource type="PackedScene" uid="uid://chbkiyiu0bir7" path="res://addons/ParkFurnitures/scenes/Park_Furniture/park_furn_arrow_e.tscn" id="36_064hv"]
+[ext_resource type="PackedScene" uid="uid://bdggduehjup4f" path="res://addons/ParkFurnitures/scenes/Park_Furniture/park_furn_arrow_d.tscn" id="37_0l1fq"]
+[ext_resource type="PackedScene" uid="uid://n6th10i0rep6" path="res://addons/ParkFurnitures/scenes/Park_Furniture/park_furn_bench_c.tscn" id="38_ogb4x"]
+[ext_resource type="PackedScene" uid="uid://cvo6x2138qndr" path="res://addons/ParkFurnitures/scenes/Park_Furniture/park_furn_table_j.tscn" id="39_hvqhb"]
+[ext_resource type="PackedScene" uid="uid://c0snjpjjkun1i" path="res://addons/ParkFurnitures/scenes/Park_Furniture/park_furn_stool_a.tscn" id="40_mve46"]
+[ext_resource type="PackedScene" uid="uid://t7oalk6akqxq" path="res://addons/ParkFurnitures/scenes/Park_Furniture/park_furn_table_i.tscn" id="41_dqvx2"]
+[ext_resource type="PackedScene" uid="uid://by5dlp6yts8n7" path="res://addons/ParkFurnitures/scenes/Park_Furniture/park_furn_table_k.tscn" id="42_t8agn"]
+[ext_resource type="PackedScene" uid="uid://bb7pexile3rke" path="res://addons/ParkFurnitures/scenes/Park_Furniture/park_furn_stool_b.tscn" id="43_bhqlp"]
+[ext_resource type="PackedScene" uid="uid://chk1efhfouoc4" path="res://addons/ParkFurnitures/scenes/Park_Furniture/park_furn_table_d.tscn" id="44_vupkh"]
+[ext_resource type="PackedScene" uid="uid://dinu7wd8lfqd8" path="res://addons/ParkFurnitures/scenes/Park_Furniture/park_furn_table_e.tscn" id="45_r56ig"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_bbuw3"]
+sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+ground_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+
+[sub_resource type="Sky" id="Sky_oeoi4"]
+sky_material = SubResource("ProceduralSkyMaterial_bbuw3")
+
+[sub_resource type="Environment" id="Environment_rocwa"]
+background_mode = 2
+sky = SubResource("Sky_oeoi4")
+tonemap_mode = 2
+ssao_enabled = true
+glow_enabled = true
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_1v74s"]
+size = Vector2(25, 25)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_esf7n"]
+albedo_color = Color(0.66, 0.66, 0.66, 1)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_6fgph"]
+data = PackedVector3Array(12.5, 0, 12.5, -12.5, 0, 12.5, 12.5, 0, -12.5, -12.5, 0, 12.5, -12.5, 0, -12.5, 12.5, 0, -12.5)
+
+[node name="parkfurnitures" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_rocwa")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.433656, -0.652536, 0.621401, 0, 0.689619, 0.724172, -0.901078, -0.314042, 0.299058, 0, 0, 0)
+shadow_enabled = true
+
+[node name="ParkFurn_Table_B" parent="." instance=ExtResource("1_kxr37")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.44788, 0, 0.5)
+
+[node name="ParkFurn_Table_L" parent="." instance=ExtResource("2_6fgph")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.07, 0, 0.5)
+
+[node name="ParkFurn_Table_G" parent="." instance=ExtResource("3_2u14w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.88541, 0, -2.55)
+
+[node name="ParkFurn_Table_C" parent="." instance=ExtResource("4_lckd2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.2105, 0, 2.89621)
+
+[node name="ParkFurn_Table_A" parent="." instance=ExtResource("5_wsec5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.5)
+
+[node name="ParkFurn_Table_H" parent="." instance=ExtResource("6_qeful")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.91275, 0, 3.19718)
+
+[node name="ParkFurn_Table_F" parent="." instance=ExtResource("7_s782l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.260496, 0, 2.74621)
+
+[node name="ParkFurn_Umbrella_E" parent="." instance=ExtResource("8_m4n41")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.18723, 0, -4)
+
+[node name="ParkFurn_Bench_A" parent="." instance=ExtResource("9_4nxru")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.02101, 0, -0.147741)
+
+[node name="ParkFurn_Bench_B" parent="." instance=ExtResource("10_v1ix2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.49837, 0, 2.16622)
+
+[node name="ParkFurn_TrashCan_C" parent="." instance=ExtResource("11_8ia3q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5291, 0, 3.37458)
+
+[node name="ParkFurn_TrashCan_B" parent="." instance=ExtResource("12_7jvi2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.60232, 0, -0.24356)
+
+[node name="ParkFurn_Lamp_B" parent="." instance=ExtResource("13_ogsct")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.01087, -0.005, -4.89829)
+
+[node name="ParkFurn_TrashCan_D" parent="." instance=ExtResource("14_375xr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.10049, 0, 2.6512)
+
+[node name="ParkFurn_TrashCan_E" parent="." instance=ExtResource("15_lybov")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.85293, 0, 2.45904)
+
+[node name="ParkFurn_TrashCan_F" parent="." instance=ExtResource("16_jru1c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.81044, 0, 1.48535)
+
+[node name="ParkFurn_Umbrella_A" parent="." instance=ExtResource("17_dah3m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.71443, 0, -4)
+
+[node name="ParkFurn_Umbrella_I" parent="." instance=ExtResource("18_wtr3w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.25668, 0, 1.5)
+
+[node name="ParkFurn_Lamp_A" parent="." instance=ExtResource("19_5a316")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.71752, -0.005, -4.89829)
+
+[node name="ParkFurn_Lamp_C" parent="." instance=ExtResource("20_p48bp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.127187, -0.005, -4.04829)
+
+[node name="ParkFurn_Umbrella_J" parent="." instance=ExtResource("21_ou3eu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.37682, 0, 1.31533)
+
+[node name="ParkFurn_Umbrella_G" parent="." instance=ExtResource("22_2wpig")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.48814, 0, -4.02213)
+
+[node name="ParkFurn_Umbrella_C" parent="." instance=ExtResource("23_5kp7e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.28557, 0, -4.02213)
+
+[node name="ParkFurn_Umbrella_K" parent="." instance=ExtResource("24_2kh7l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.10668, 0, 1.57731)
+
+[node name="ParkFurn_Umbrella_L" parent="." instance=ExtResource("25_dfn03")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.97318, 0, 1.59264)
+
+[node name="ParkFurn_Umbrella_F" parent="." instance=ExtResource("26_onei3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.18723, 0, -1.25092)
+
+[node name="ParkFurn_Umbrella_B" parent="." instance=ExtResource("27_bbrre")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.71443, 0, -1.25092)
+
+[node name="ParkFurn_Umbrella_H" parent="." instance=ExtResource("28_iah0g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.48814, 0, -1.27305)
+
+[node name="ParkFurn_Umbrella_D" parent="." instance=ExtResource("29_sujjp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.28557, 0, -1.27305)
+
+[node name="ParkFurn_TrashCan_A" parent="." instance=ExtResource("30_3sghy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.29475, 0, 0.780359)
+
+[node name="ParkFurn_Lamp_E" parent="." instance=ExtResource("31_6p6ir")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.11616, -0.005, -1.39829)
+
+[node name="ParkFurn_Lamp_D" parent="." instance=ExtResource("32_3jtq4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.627187, -0.005, -1.04829)
+
+[node name="ParkFurn_Arrow_A" parent="." instance=ExtResource("33_4v0wd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.50251, 0, 4.96327)
+
+[node name="ParkFurn_Arrow_B" parent="." instance=ExtResource("34_u6q0b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.27827, 0, 3.87023)
+
+[node name="ParkFurn_Arrow_C" parent="." instance=ExtResource("35_rjrmb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.26125, 0, 3.87023)
+
+[node name="ParkFurn_Arrow_E" parent="." instance=ExtResource("36_064hv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.95565, 0, 4.57667)
+
+[node name="ParkFurn_Arrow_D" parent="." instance=ExtResource("37_0l1fq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.96034, 0, 4.57667)
+
+[node name="ParkFurn_Bench_C" parent="." instance=ExtResource("38_ogb4x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.79837, 0, 3.04998)
+
+[node name="ParkFurn_Table_J" parent="." instance=ExtResource("39_hvqhb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.36275, 0, 3.15096)
+
+[node name="ParkFurn_Stool_A" parent="." instance=ExtResource("40_mve46")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.77375, 0, 3.15096)
+
+[node name="ParkFurn_Table_I" parent="." instance=ExtResource("41_dqvx2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.95432, 0, 2.24841)
+
+[node name="ParkFurn_Table_K" parent="." instance=ExtResource("42_t8agn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.30432, 0, 2.15219)
+
+[node name="ParkFurn_Stool_B" parent="." instance=ExtResource("43_bhqlp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.71532, 0, 2.15219)
+
+[node name="ParkFurn_Table_D" parent="." instance=ExtResource("44_vupkh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.290685, 0, -2.78338)
+
+[node name="ParkFurn_Table_E" parent="." instance=ExtResource("45_r56ig")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.7874, 0, -2.78338)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("PlaneMesh_1v74s")
+surface_material_override/0 = SubResource("StandardMaterial3D_esf7n")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_6fgph")

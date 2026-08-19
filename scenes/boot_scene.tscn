@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dpukehpyr2bep"]
+
+[ext_resource type="Script" uid="uid://bc68nkix2n2v0" path="res://scripts/util/boot_scene.gd" id="1_vcwb5"]
+
+[node name="BootScene" type="Node3D"]
+script = ExtResource("1_vcwb5")

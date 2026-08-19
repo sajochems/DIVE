@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://dg5fcy7eg1eem"]
+
+[ext_resource type="Script" uid="uid://cxy84qlejl2qb" path="res://Scripts/billboard_baker.gd" id="1_m77mh"]
+[ext_resource type="PackedScene" uid="uid://nn8jorkwm5ue" path="res://Scenes/world_environment.tscn" id="2_xhi3u"]
+[ext_resource type="PackedScene" uid="uid://bkh3ek7wf4d36" path="res://Scenes/Plants/tree_01.tscn" id="3_plep2"]
+
+[node name="BillboardBaker" type="Node3D"]
+script = ExtResource("1_m77mh")
+output_dir = null
+num_views = null
+image_size = null
+target_node_path = NodePath("SubViewport/tree_01")
+camera_path = NodePath("SubViewport/Camera3D")
+viewport_path = NodePath("SubViewport")
+high_camera_pos = null
+low_camera_pos = null
+look_target = null
+
+[node name="SubViewport" type="SubViewport" parent="."]
+transparent_bg = true
+size = Vector2i(1024, 1024)
+render_target_update_mode = 4
+
+[node name="Camera3D" type="Camera3D" parent="SubViewport"]
+transform = Transform3D(45, 0, 0, 0, 11.6469, 43.4667, 0, -43.4667, 11.6469, 0, 22.5, 8)
+fov = 50.0
+
+[node name="tree_01" parent="SubViewport" instance=ExtResource("3_plep2")]
+
+[node name="WorldEnvironment" parent="SubViewport" instance=ExtResource("2_xhi3u")]

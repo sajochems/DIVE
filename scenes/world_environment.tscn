@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://nn8jorkwm5ue"]
+
+[ext_resource type="Texture2D" uid="uid://cspij1s655v2s" path="res://addons/AllSkyFree_Skyboxes/Epic_BlueSunset_EquiRect_flat.png" id="1_2edto"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_d60sq"]
+panorama = ExtResource("1_2edto")
+
+[sub_resource type="Sky" id="Sky_ij7tu"]
+sky_material = SubResource("PanoramaSkyMaterial_d60sq")
+
+[sub_resource type="Environment" id="Environment_xk6ql"]
+background_mode = 2
+background_energy_multiplier = 1.5
+sky = SubResource("Sky_ij7tu")
+tonemap_mode = 3
+glow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment"]
+environment = SubResource("Environment_xk6ql")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.34202, -0.730278, 0.591368, 0, 0.62932, 0.777146, -0.939693, -0.2658, 0.21524, 0, 0, 0)
+light_energy = 4.0
+light_bake_mode = 1

@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://o3ophdo2dqsy"]
+
+[ext_resource type="PackedScene" uid="uid://ctihgr8mh7nuq" path="res://addons/ParkFurnitures/glb/parkfurnitures.glb" id="1_8tcjj"]
+[ext_resource type="Material" uid="uid://cr44gxyt8wvuc" path="res://addons/ParkFurnitures/material/ParkFurniture_mat.tres" id="2_a5fkk"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_qi14m"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a5fkk"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="parkfurnitures" parent="." instance=ExtResource("1_8tcjj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, -1.5)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.965926, -0.258819, 0, 0.258819, 0.965926, 11, 0, 1)
+material_override = ExtResource("2_a5fkk")
+mesh = SubResource("PlaneMesh_qi14m")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.965926, -0.258819, 0, 0.258819, 0.965926, 15, 0, 1)
+material_override = SubResource("StandardMaterial3D_a5fkk")
+mesh = SubResource("PlaneMesh_qi14m")

@@ -1,0 +1,47 @@
+[gd_scene load_steps=8 format=3 uid="uid://dw3evtvcwvm3t"]
+
+[ext_resource type="Material" uid="uid://j6ba1b8swx26" path="res://assets/Textures/Materials/Facade006.tres" id="7_fcklg"]
+[ext_resource type="Material" uid="uid://eivyh5o3363i" path="res://assets/Textures/Materials/Concrete.tres" id="8_07c72"]
+[ext_resource type="Material" uid="uid://bt7cpyl7704dl" path="res://assets/Textures/Materials/Side_Walk.tres" id="8_y4yft"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_y4yft"]
+lightmap_size_hint = Vector2i(239, 293)
+add_uv2 = true
+size = Vector3(31.5, 13, 15.5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_vbypi"]
+lightmap_size_hint = Vector2i(224, 186)
+add_uv2 = true
+size = Vector3(30, 3, 14)
+
+[sub_resource type="BoxMesh" id="BoxMesh_fcklg"]
+lightmap_size_hint = Vector2i(234, 361)
+add_uv2 = true
+size = Vector3(31, 20, 15)
+
+[sub_resource type="BoxMesh" id="BoxMesh_07c72"]
+lightmap_size_hint = Vector2i(239, 173)
+add_uv2 = true
+size = Vector3(31.5, 1, 15.5)
+
+[node name="Office Building Short" type="Node3D"]
+
+[node name="Base" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.5, 0)
+material_override = ExtResource("7_fcklg")
+mesh = SubResource("BoxMesh_y4yft")
+
+[node name="Split" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 14.5, 0)
+material_override = ExtResource("8_y4yft")
+mesh = SubResource("BoxMesh_vbypi")
+
+[node name="Top" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 26, 0)
+material_override = ExtResource("7_fcklg")
+mesh = SubResource("BoxMesh_fcklg")
+
+[node name="Roof" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 36.5, 0)
+material_override = ExtResource("8_07c72")
+mesh = SubResource("BoxMesh_07c72")

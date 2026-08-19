@@ -1,0 +1,132 @@
+[gd_scene load_steps=21 format=3 uid="uid://ba32cxusts5c3"]
+
+[ext_resource type="Script" uid="uid://cedkhjnnaxo84" path="res://scripts/objects/firework.gd" id="1_70djy"]
+[ext_resource type="Script" uid="uid://djl0iqvyjtwyi" path="res://scripts/interaction/interactable.gd" id="1_y2268"]
+[ext_resource type="Script" uid="uid://bfmhisnmxev5s" path="res://scripts/interaction/interactable_area.gd" id="2_b6xg6"]
+[ext_resource type="Script" uid="uid://bc7vq6yc4owbk" path="res://scripts/interaction/actions/fireworks_action.gd" id="3_b6xg6"]
+[ext_resource type="Shader" uid="uid://c617o8fj8yell" path="res://shaders/fire.gdshader" id="5_s3ego"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_70djy"]
+albedo_color = Color(1, 0.67451, 0, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_b6xg6"]
+material = SubResource("StandardMaterial3D_70djy")
+top_radius = 0.1
+bottom_radius = 0.1
+height = 0.6
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b6xg6"]
+albedo_color = Color(0.474273, 0, 0.0178905, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_70djy"]
+material = SubResource("StandardMaterial3D_b6xg6")
+top_radius = 0.0
+bottom_radius = 0.15
+height = 0.2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s3ego"]
+albedo_color = Color(0.274252, 0.129117, 4.81308e-08, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_s3ego"]
+material = SubResource("StandardMaterial3D_s3ego")
+top_radius = 0.02
+bottom_radius = 0.02
+height = 0.15
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_70djy"]
+radius = 0.1
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_s3ego"]
+emission_shape = 1
+emission_sphere_radius = 0.04
+gravity = Vector3(0, -0.5, 0)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5xccm"]
+transparency = 1
+albedo_color = Color(0.147672, 0.147672, 0.147672, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_x213n"]
+material = SubResource("StandardMaterial3D_5xccm")
+radius = 0.02
+height = 0.04
+
+[sub_resource type="Gradient" id="Gradient_5xccm"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_x213n"]
+gradient = SubResource("Gradient_5xccm")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_x5yof"]
+emission_shape = 1
+emission_sphere_radius = 0.1
+direction = Vector3(0, 1, 0)
+spread = 180.0
+initial_velocity_min = 1.0
+initial_velocity_max = 5.0
+gravity = Vector3(0, -3, 0)
+color = Color(1, 0, 0, 1)
+color_ramp = SubResource("GradientTexture1D_x213n")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_x5yof"]
+render_priority = 0
+shader = ExtResource("5_s3ego")
+shader_parameter/speed = 2.0
+shader_parameter/noise_scale = 5.0
+shader_parameter/distortion = 0.2
+shader_parameter/height_fade = 1.5
+
+[sub_resource type="SphereMesh" id="SphereMesh_fn6yb"]
+material = SubResource("ShaderMaterial_x5yof")
+radius = 0.02
+height = 0.04
+
+[node name="Firework" type="Node3D"]
+script = ExtResource("1_70djy")
+
+[node name="Body" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0, 0)
+mesh = SubResource("CylinderMesh_b6xg6")
+
+[node name="Head" type="MeshInstance3D" parent="Body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.39894, 0)
+mesh = SubResource("CylinderMesh_70djy")
+
+[node name="Fuse" type="MeshInstance3D" parent="Body/Head"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0713328, -0.749133, 0)
+mesh = SubResource("CylinderMesh_s3ego")
+
+[node name="Interactable" type="Node3D" parent="Body" node_paths=PackedStringArray("actions")]
+script = ExtResource("1_y2268")
+actions = [NodePath("../ActionFireworks")]
+allowed_interactor_groups = Array[String](["interaction_fuse"])
+metadata/_custom_type_script = "uid://djl0iqvyjtwyi"
+
+[node name="InteractableArea" type="Area3D" parent="Body" node_paths=PackedStringArray("interactable")]
+script = ExtResource("2_b6xg6")
+interactable = NodePath("../Interactable")
+metadata/_custom_type_script = "uid://bfmhisnmxev5s"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Body/InteractableArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0752503, -0.361847, 0)
+shape = SubResource("SphereShape3D_70djy")
+
+[node name="ActionFireworks" type="Node" parent="Body"]
+script = ExtResource("3_b6xg6")
+metadata/_custom_type_script = "uid://bc7vq6yc4owbk"
+
+[node name="TrailParticles" type="GPUParticles3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.144395, 0)
+emitting = false
+amount = 100
+process_material = SubResource("ParticleProcessMaterial_s3ego")
+draw_pass_1 = SubResource("SphereMesh_x213n")
+
+[node name="ExplosionParticles" type="GPUParticles3D" parent="."]
+emitting = false
+amount = 300
+lifetime = 1.5
+one_shot = true
+explosiveness = 1.0
+randomness = 0.5
+process_material = SubResource("ParticleProcessMaterial_x5yof")
+draw_pass_1 = SubResource("SphereMesh_fn6yb")

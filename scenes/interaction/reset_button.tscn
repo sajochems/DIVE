@@ -1,0 +1,86 @@
+[gd_scene format=3 uid="uid://3okhblmiu4eb"]
+
+[ext_resource type="Script" uid="uid://dft2tnbqbaf20" path="res://scripts/interaction/actions/teleport_action.gd" id="1_kah0i"]
+[ext_resource type="Script" uid="uid://djl0iqvyjtwyi" path="res://scripts/interaction/interactable.gd" id="2_gc3k8"]
+[ext_resource type="Script" uid="uid://bfmhisnmxev5s" path="res://scripts/interaction/interactable_area.gd" id="3_1uqhc"]
+[ext_resource type="Shader" uid="uid://bi482fw8l6go8" path="res://shaders/magic.gdshader" id="4_7w3il"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kah0i"]
+albedo_color = Color(1, 0, 0, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_v3hdr"]
+material = SubResource("StandardMaterial3D_kah0i")
+radius = 0.1
+height = 0.2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gc3k8"]
+albedo_color = Color(0.10748, 0.10748, 0.10748, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_1uqhc"]
+material = SubResource("StandardMaterial3D_gc3k8")
+size = Vector3(0.25, 0.125, 0.25)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_7w3il"]
+top_radius = 0.05
+bottom_radius = 0.05
+height = 1.5
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_2h8ee"]
+radius = 0.11
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_foi0k"]
+emission_shape_scale = Vector3(1, 1, 0.25)
+emission_shape = 6
+emission_ring_axis = Vector3(0, 0, 1)
+emission_ring_height = 1.0
+emission_ring_radius = 1.5
+emission_ring_inner_radius = 1.3
+emission_ring_cone_angle = 90.0
+gravity = Vector3(0, 1, 0)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_je1dm"]
+render_priority = 0
+shader = ExtResource("4_7w3il")
+
+[sub_resource type="QuadMesh" id="QuadMesh_4f3rp"]
+material = SubResource("ShaderMaterial_je1dm")
+size = Vector2(0.1, 0.1)
+
+[node name="ResetButton" type="Node3D" unique_id=867124174]
+
+[node name="Button" type="MeshInstance3D" parent="." unique_id=1711522913]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+mesh = SubResource("SphereMesh_v3hdr")
+script = ExtResource("1_kah0i")
+
+[node name="Box" type="MeshInstance3D" parent="Button" unique_id=1510681912]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0387324, 0)
+mesh = SubResource("BoxMesh_1uqhc")
+
+[node name="Stand" type="MeshInstance3D" parent="Button" unique_id=1689757092]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.75, 0)
+mesh = SubResource("CylinderMesh_7w3il")
+
+[node name="Interactable" type="Node3D" parent="Button" unique_id=412161315 node_paths=PackedStringArray("actions")]
+script = ExtResource("2_gc3k8")
+actions = [NodePath("../ActionTeleport")]
+allowed_interactor_groups = Array[String](["interaction_hand"])
+metadata/_custom_type_script = "uid://djl0iqvyjtwyi"
+
+[node name="InteractableArea" type="Area3D" parent="Button" unique_id=2006658908 node_paths=PackedStringArray("interactable")]
+script = ExtResource("3_1uqhc")
+interactable = NodePath("../Interactable")
+metadata/_custom_type_script = "uid://bfmhisnmxev5s"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Button/InteractableArea" unique_id=226874754]
+shape = SubResource("SphereShape3D_2h8ee")
+
+[node name="ActionTeleport" type="Node" parent="Button" unique_id=341537671]
+script = ExtResource("1_kah0i")
+metadata/_custom_type_script = "uid://dft2tnbqbaf20"
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="." unique_id=1546066404]
+transform = Transform3D(1, 0, 0, 0, -0.000733062, 1, 0, -1, -0.000733062, 0, 0.0985278, 0)
+amount = 150
+process_material = SubResource("ParticleProcessMaterial_foi0k")
+draw_pass_1 = SubResource("QuadMesh_4f3rp")

@@ -1,0 +1,7 @@
+AllSky: https://godotengine.org/asset-library/asset/579
+
+Buildings: https://dream-search-repeat.itch.io/buildings-and-streets-pack
+
+Tree_01: https://opengameart.org/content/tree-5
+
+plants pack general: https://opengameart.org/content/cc0-3d-plants

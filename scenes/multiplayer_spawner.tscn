@@ -1,0 +1,13 @@
+[gd_scene load_steps=5 format=3 uid="uid://bhl4oly1h6jvg"]
+
+[ext_resource type="Script" uid="uid://crwm8mgrxomp6" path="res://scripts/high_level_multiplayer/high_level_player_spawner.gd" id="1_casmp"]
+[ext_resource type="PackedScene" uid="uid://do1okf125qdqh" path="res://scenes/players/player.tscn" id="2_u0axl"]
+[ext_resource type="PackedScene" uid="uid://dw756ee85lmdm" path="res://scenes/players/xr_player.tscn" id="3_u0axl"]
+[ext_resource type="PackedScene" uid="uid://57bole61ertf" path="res://scenes/players/avatar.tscn" id="4_krltp"]
+
+[node name="MultiplayerSpawner" type="MultiplayerSpawner"]
+_spawnable_scenes = PackedStringArray("uid://do1okf125qdqh")
+script = ExtResource("1_casmp")
+network_test_player = ExtResource("2_u0axl")
+network_client_xr_player = ExtResource("3_u0axl")
+network_server_xr_player = ExtResource("4_krltp")

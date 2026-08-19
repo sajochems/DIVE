@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://byqy4v67qwo8a"]
+
+[ext_resource type="Script" uid="uid://di7nvv1s81cmh" path="res://scripts/objects/spawn_structure.gd" id="1_djwna"]
+[ext_resource type="PackedScene" uid="uid://ccx3c8q0yv1b4" path="res://scenes/buildings/office_building_tall.tscn" id="1_eix8p"]
+
+[node name="CityStructure" type="Node3D" unique_id=260782380]
+script = ExtResource("1_djwna")
+BUIDLINGWIDTH = 13.5
+DISTANCEOFFSET = 1.5
+
+[node name="Office Building Tall" parent="." unique_id=2040917535 instance=ExtResource("1_eix8p")]

@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://c56a7jy2jp2vu"]
+
+[ext_resource type="ArrayMesh" uid="uid://bxu25us8ivn5b" path="res://addons/elevator/elevator.obj" id="1_cyba6"]
+
+[node name="Elevator" type="Node3D"]
+
+[node name="Elevator" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.01, 0, 0, 0, 0.01, 0, 0, 0, 0.01, 0, 2.063, 0)
+mesh = ExtResource("1_cyba6")
